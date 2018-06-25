@@ -12,9 +12,10 @@
 
 @interface PX_MC_BM_MyInfoViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,HSDatePickerVCDelegate,UITextFieldDelegate,HSGenderPickerVCDelegate>
 @property (nonatomic, strong) UITableView *myInfoTableView;
-@property (nonatomic,strong) UIImageView *img;
-@property (nonatomic,strong) UITableViewCell *cell;
-@property (nonatomic,strong) NSString *strBirthday,*trans_name, *trans_qianming, *trans_sex, *trans_zb,*strGender;
+@property (nonatomic, strong) UIImageView *img;
+@property (nonatomic, strong) UITableViewCell *cell;
+@property (nonatomic, strong) NSString *strBirthday,*trans_name, *trans_qianming, *trans_sex, *trans_zb,*strGender;
+@property (nonatomic, strong) UIImage *pxPhoto;
 @end
 
 @implementation PX_MC_BM_MyInfoViewController
@@ -59,7 +60,7 @@
     label.font = [UIFont systemFontOfSize:14];
     
     label.frame = CGRectMake(10, 3, 100, 24);
-
+    
     
     [headerView addSubview:label];
     
@@ -98,61 +99,75 @@
         case 0: {
             if (indexPath.row==0) {
                 _cell.textLabel.text=@"头像";
-                
-                //创建一个image View
                 _img = [[UIImageView alloc]init];
                 _img.frame = CGRectMake(0, 0, 50, 50);
-//
-//                //如果服务器返回的数据中 ,图片为空,使用默认图片
-//                if(_img) {
-//                    //头像
-////                    _img.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:iconUrl]]];
-//                }
-//                else{
-//                    _img.image= [UIImage imageNamed:@"my2"];
-//
-//                }
-                _img.image= [UIImage imageNamed:@"ic_button_circle_photo_add"];
                 _img.layer.cornerRadius = 25;
                 _img.layer.masksToBounds = YES;
-                //把cell右边的变成imageview
                 _cell.accessoryView =_img;
+    
+                //如果服务器返回的数据中 ,图片为空,使用默认图片if 默认是  FALSE
+                if(_pxPhoto)
+                {
+                     _img.image = _pxPhoto;
+                  
+                    //头像
+                    // _img.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:iconUrl]]];
+                }else{
 
+                _img.image= [UIImage imageNamed:@"ic_button_circle_photo_add"];
+
+                }
+                
+   
+        
+                
             } else if (indexPath.row==1) {
-                    _cell.textLabel.text=@"姓名";
-                    //cell.detailTextLabel.text = @"请填写姓名";
+                _cell.textLabel.text=@"姓名";
+                //cell.detailTextLabel.text = @"请填写姓名";
                 
                 UITextField *text = [[UITextField alloc]init];
                 text.placeholder = @"请填写姓名";
                 text.textAlignment = NSTextAlignmentRight;
                 text.frame = CGRectMake(0, 0, 200, 44);
-                 _cell.accessoryView =text;
-                            //cell.imageView.image=[UIImage imageNamed:@"卡包"];
-                }else{
-                    _cell.textLabel.text=@"签名";
-                    //cell.detailTextLabel.text = @"请填写姓名";
+                _cell.accessoryView =text;
                 
-                    UITextField *text = [[UITextField alloc]init];
-                    text.placeholder = @"请填写签名";
-                    text.textAlignment = NSTextAlignmentRight;
-                    text.frame = CGRectMake(0, 0, 200, 44);
-                    _cell.accessoryView =text;
+                text.delegate = self;
+                text.tag = 100+1;
+                //cell.imageView.image=[UIImage imageNamed:@"卡包"];
+                if (_trans_name.length>0) {
+                    text.text = _trans_name;
+                }
+                
+            }else{
+                _cell.textLabel.text=@"签名";
+                //cell.detailTextLabel.text = @"请填写姓名";
+                
+                UITextField *text = [[UITextField alloc]init];
+                text.placeholder = @"请填写签名";
+                text.textAlignment = NSTextAlignmentRight;
+                text.frame = CGRectMake(0, 0, 200, 44);
+                _cell.accessoryView =text;
+                text.delegate = self;
+                text.tag = 100+2;
+                if (_trans_qianming.length>0) {
+                    text.text = _trans_qianming;
+                }
+                
             }
-    
+            
         }
             break;
             
         default: {
             
-            
             if (indexPath.row==0) {
-                 _cell.textLabel.text=@"性别";
+                _cell.textLabel.text=@"性别";
                 if (_strGender.length>0) {
                     _cell.detailTextLabel.text = _strGender;
                     
                 }else{
-                     _cell.detailTextLabel.text = @"请选择性别";
-     
+                    _cell.detailTextLabel.text = @"请选择性别";
+                    
                 }
                 //cell.imageView.image=[UIImage imageNamed:@"my2"];
             } else if (indexPath.row==1) {
@@ -160,21 +175,21 @@
                 
                 if (_strBirthday.length>0) {
                     _cell.detailTextLabel.text = _strBirthday;
-
+                    
                 }else{
                     _cell.detailTextLabel.text = @"请选择生日";
-
+                    
                 }
                 
                 //cell.imageView.image=[UIImage imageNamed:@"卡包"];
             }else{
                 _cell.textLabel.text=@"装扮";
                 _cell.detailTextLabel.text = @"请装扮";
-
+                
                 //cell.imageView.image=[UIImage imageNamed:@"设置"];
             }
             
-        
+            
             
         }
             
@@ -207,13 +222,13 @@
             
             switch (indexPath.row) {
                 case 0:  {
-                [self alterHeadPortrait:nil];
+                    [self alterHeadPortrait:nil];
                 }
                     break;
                     
                 case 1: {
                     
-
+                    
                 }
                     
                     break;
@@ -231,25 +246,25 @@
         {
             switch (indexPath.section) {
                 case 1:{
-                  switch (indexPath.row) {
-                    case 0:  {
-                        HSGenderPickerVC *vc = [[HSGenderPickerVC alloc] init];
-                        vc.delegate = self;
-                        [self presentViewController:vc animated:YES completion:nil];
+                    switch (indexPath.row) {
+                        case 0:  {
+                            HSGenderPickerVC *vc = [[HSGenderPickerVC alloc] init];
+                            vc.delegate = self;
+                            [self presentViewController:vc animated:YES completion:nil];
+                        }
+                            break;
+                            
+                        case 1:  {
+                            HSDatePickerVC *vc = [[HSDatePickerVC alloc] init];
+                            vc.delegate = self;
+                            [self presentViewController:vc animated:YES completion:nil];
+                        }
+                            break;
+                            
                     }
-                     break;
-                          
-                      case 1:  {
-                          HSDatePickerVC *vc = [[HSDatePickerVC alloc] init];
-                          vc.delegate = self;
-                          [self presentViewController:vc animated:YES completion:nil];
-                      }
-                          break;
-                          
-                  }
-           
+                    
                 }
-          
+                    
             }
             break;
             
@@ -313,9 +328,10 @@
 //PickerImage完成后的代理方法
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     //定义一个newPhoto，用来存放我们选择的图片。
-    UIImage *newPhoto = [info objectForKey:@"UIImagePickerControllerEditedImage"];
-    _img.image = newPhoto;
+    _pxPhoto = [info objectForKey:@"UIImagePickerControllerEditedImage"];
+    //_intState = _img.image.scale;
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.myInfoTableView reloadData];
 }
 #pragma mark - HSDatePickerVCDelegate
 - (void)datePicker:(HSDatePickerVC*)datePicker
@@ -325,13 +341,13 @@
 {
     NSLog(@"选择了   %@--%@--%@",year,month,day);
     _strBirthday = [NSString stringWithFormat:@"%@-%@-%@",year,month,day];
-     [self.myInfoTableView reloadData];
-
+    [self.myInfoTableView reloadData];
+    
 }
 #pragma mark - HSGenderPickerVCDelegate
 - (void)genderPicker:(HSGenderPickerVC *)genderPicker selectedGernder:(NSString *)gender{
-     _strGender = gender;
-     [self.myInfoTableView reloadData];
+    _strGender = gender;
+    [self.myInfoTableView reloadData];
 }
 
 #pragma mark -- UITextField delegate --
