@@ -8,13 +8,13 @@
 
 #import "PX_MC_BM_MyInfoViewController.h"
 #import "HSDatePickerVC.h"
+#import "HSGenderPickerVC.h"
 
-@interface PX_MC_BM_MyInfoViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,HSDatePickerVCDelegate>
+@interface PX_MC_BM_MyInfoViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,HSDatePickerVCDelegate,UITextFieldDelegate,HSGenderPickerVCDelegate>
 @property (nonatomic, strong) UITableView *myInfoTableView;
 @property (nonatomic,strong) UIImageView *img;
 @property (nonatomic,strong) UITableViewCell *cell;
-@property (nonatomic,strong) NSString *strBirthday;
-
+@property (nonatomic,strong) NSString *strBirthday,*trans_name, *trans_qianming, *trans_sex, *trans_zb,*strGender;
 @end
 
 @implementation PX_MC_BM_MyInfoViewController
@@ -92,7 +92,7 @@
     _cell.textLabel.textColor=ZhengWenColor;
     _cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     _cell.detailTextLabel.font = TextFont(14);
-    _cell.detailTextLabel.backgroundColor = HexColor(0x333333);
+    _cell.detailTextLabel.backgroundColor = PXWHITECOLOR;
     
     switch (indexPath.section) {
         case 0: {
@@ -119,9 +119,8 @@
                 _cell.accessoryView =_img;
 
             } else if (indexPath.row==1) {
-                            _cell.textLabel.text=@"姓名";
+                    _cell.textLabel.text=@"姓名";
                     //cell.detailTextLabel.text = @"请填写姓名";
-                
                 
                 UITextField *text = [[UITextField alloc]init];
                 text.placeholder = @"请填写姓名";
@@ -132,8 +131,7 @@
                 }else{
                     _cell.textLabel.text=@"签名";
                     //cell.detailTextLabel.text = @"请填写姓名";
-                    
-                    
+                
                     UITextField *text = [[UITextField alloc]init];
                     text.placeholder = @"请填写签名";
                     text.textAlignment = NSTextAlignmentRight;
@@ -146,19 +144,33 @@
             
         default: {
             
+            
             if (indexPath.row==0) {
                  _cell.textLabel.text=@"性别";
-                 _cell.detailTextLabel.text = @"请选择性别";
-               
+                if (_strGender.length>0) {
+                    _cell.detailTextLabel.text = _strGender;
+                    
+                }else{
+                     _cell.detailTextLabel.text = @"请选择性别";
+     
+                }
                 //cell.imageView.image=[UIImage imageNamed:@"my2"];
             } else if (indexPath.row==1) {
                 _cell.textLabel.text=@"生日";
-                _cell.detailTextLabel.text = @"请选择生日";
+                
+                if (_strBirthday.length>0) {
+                    _cell.detailTextLabel.text = _strBirthday;
+
+                }else{
+                    _cell.detailTextLabel.text = @"请选择生日";
+
+                }
                 
                 //cell.imageView.image=[UIImage imageNamed:@"卡包"];
             }else{
                 _cell.textLabel.text=@"装扮";
                 _cell.detailTextLabel.text = @"请装扮";
+
                 //cell.imageView.image=[UIImage imageNamed:@"设置"];
             }
             
@@ -221,6 +233,9 @@
                 case 1:{
                   switch (indexPath.row) {
                     case 0:  {
+                        HSGenderPickerVC *vc = [[HSGenderPickerVC alloc] init];
+                        vc.delegate = self;
+                        [self presentViewController:vc animated:YES completion:nil];
                     }
                      break;
                           
@@ -309,15 +324,47 @@
                day:(NSString *)day
 {
     NSLog(@"选择了   %@--%@--%@",year,month,day);
-  
-    
-    
-       _strBirthday = [NSString stringWithFormat:@"%@-%@-%@",year,month,day];
-    
-       _cell.detailTextLabel.text = _strBirthday;
-    
-    
+    _strBirthday = [NSString stringWithFormat:@"%@-%@-%@",year,month,day];
+     [self.myInfoTableView reloadData];
+
+}
+#pragma mark - HSGenderPickerVCDelegate
+- (void)genderPicker:(HSGenderPickerVC *)genderPicker selectedGernder:(NSString *)gender{
+     _strGender = gender;
+     [self.myInfoTableView reloadData];
 }
 
+#pragma mark -- UITextField delegate --
+//开始输入文字
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(shouldChangeTextField:) name:@"UITextFieldTextDidChangeNotification" object:textField];
+    
+    textField.returnKeyType = UIReturnKeyDone;
+}
+//文字发生改变
+- (void)shouldChangeTextField:(NSNotification *)obj{
+    UITextField *tf = (UITextField *)obj.object;
+    NSInteger tag = tf.tag-100;
+    if (tag == 1) {
+        //姓名
+        _trans_name = tf.text;
+    } else {
+        //签名
+        _trans_qianming = tf.text;
+    }
+    
+}
+//键盘确定搜索的点击事件
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    NSLog(@"点击搜索的逻辑");
+    
+    return YES;
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    NSLog(@"完成编辑改变视图样式");
+    //完成编辑
+}
 
 @end

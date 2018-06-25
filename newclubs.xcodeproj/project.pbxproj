@@ -280,12 +280,12 @@
 				6B25AFDF20DCFECE00114739 /* HSAddressPickerVC.m */,
 				6B25AFE020DCFECE00114739 /* HSDatePickerVC.m */,
 				6B25AFE120DCFECE00114739 /* NSDate+Date.h */,
-				6B25AFE220DCFECE00114739 /* HSGenderPickerVC.h */,
 				6B25AFE320DCFECE00114739 /* HSBasePickerVC.m */,
 				6B25AFE420DCFECE00114739 /* HSPickerViewTestVC.storyboard */,
 				6B25AFE520DCFECE00114739 /* NSDate+Date.m */,
 				6B25AFE620DCFECE00114739 /* HSDatePickerVC.h */,
 				6B25AFE720DCFECE00114739 /* HSAddressPickerVC.h */,
+				6B25AFE220DCFECE00114739 /* HSGenderPickerVC.h */,
 				6B25AFE820DCFECE00114739 /* HSGenderPickerVC.m */,
 				6B25AFE920DCFECE00114739 /* HSBasePickerVC.h */,
 				6B25AFEA20DCFECE00114739 /* HS_address.plist */,
@@ -1289,7 +1289,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J4WEK58SJL;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/newclubs/newclubs/Classes/App/PX-PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/newclubs/Classes/App/PX-PrefixHeader.pch";
 				INFOPLIST_FILE = newclubs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1308,7 +1308,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J4WEK58SJL;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/newclubs/newclubs/Classes/App/PX-PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/newclubs/Classes/App/PX-PrefixHeader.pch";
 				INFOPLIST_FILE = newclubs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
