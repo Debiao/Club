@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="530-OO-nKd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Picker View TestVC-->
+        <scene sceneID="jjt-xA-y6g">
+            <objects>
+                <viewController id="agR-hW-eDy" customClass="HSPickerViewTestVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O6N-eN-7As"/>
+                        <viewControllerLayoutGuide type="bottom" id="XMv-Uj-bhi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fFE-qP-812">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O63-qf-K6o">
+                                <rect key="frame" x="172" y="173" width="31" height="30"/>
+                                <state key="normal" title="日期"/>
+                                <connections>
+                                    <action selector="datePickerView:" destination="agR-hW-eDy" eventType="touchUpInside" id="bdc-Ig-FY4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltZ-Rp-cCh">
+                                <rect key="frame" x="172" y="257" width="31" height="30"/>
+                                <state key="normal" title="地区"/>
+                                <connections>
+                                    <action selector="addressPickerView:" destination="agR-hW-eDy" eventType="touchUpInside" id="8uW-rG-4JM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqt-zk-Z8U">
+                                <rect key="frame" x="172" y="341" width="31" height="30"/>
+                                <state key="normal" title="性别"/>
+                                <connections>
+                                    <action selector="genderPickerView:" destination="agR-hW-eDy" eventType="touchUpInside" id="Na3-r9-Jbd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lqt-zk-Z8U" firstAttribute="centerX" secondItem="fFE-qP-812" secondAttribute="centerX" id="6fK-7c-1k8"/>
+                            <constraint firstItem="lqt-zk-Z8U" firstAttribute="top" secondItem="ltZ-Rp-cCh" secondAttribute="bottom" constant="54" id="8wC-hw-zad"/>
+                            <constraint firstItem="ltZ-Rp-cCh" firstAttribute="centerX" secondItem="fFE-qP-812" secondAttribute="centerX" id="FEx-Je-JMp"/>
+                            <constraint firstItem="O63-qf-K6o" firstAttribute="top" secondItem="O6N-eN-7As" secondAttribute="bottom" constant="109" id="JyI-4V-bhi"/>
+                            <constraint firstItem="ltZ-Rp-cCh" firstAttribute="top" secondItem="O63-qf-K6o" secondAttribute="bottom" constant="54" id="Z9v-Vb-LIf"/>
+                            <constraint firstItem="O63-qf-K6o" firstAttribute="centerX" secondItem="fFE-qP-812" secondAttribute="centerX" id="jSG-E2-en7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sL7-EM-CDU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UOL-nC-05N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913" y="-28"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gzy-JS-auV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="530-OO-nKd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NuM-op-uZO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="agR-hW-eDy" kind="relationship" relationship="rootViewController" id="mhl-IR-0JQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYS-ZW-y02" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081" y="-28"/>
+        </scene>
+    </scenes>
+</document>
