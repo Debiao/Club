@@ -9,9 +9,9 @@
 #import "PX_MC_BM_CreateCirclePermissionsViewController.h"
 #import "PX_MC_BM_CircleViewController.h"
 #import "UILablePadding.h"
-#import "HSGenderPickerVC.h"
+#import "HSChooseWhetherVC.h"
 
-@interface PX_MC_BM_CreateCirclePermissionsViewController ()<HSGenderPickerVCDelegate>
+@interface PX_MC_BM_CreateCirclePermissionsViewController ()<HSChooseWhetherVCDelegate>
 @property (nonatomic,strong)  UISwitch *swCircle;
 @end
 
@@ -51,16 +51,15 @@
 -(void)switchAction:(UISwitch *)pxSwitch{
     //判断开关的状态
     if (self.swCircle.on) {
-        HSGenderPickerVC *vc = [[HSGenderPickerVC alloc] init];
+        HSChooseWhetherVC *vc = [[HSChooseWhetherVC alloc] init];
         vc.delegate = self;
         [self presentViewController:vc animated:YES completion:nil];
     } else {
         NSLog(@"switch is off");
     }
 }
-#pragma mark - HSGenderPickerVCDelegate
-- (void)genderPicker:(HSGenderPickerVC *)genderPicker selectedGernder:(NSString *)gender State:(NSInteger)state{
-      NSLog(@"选择了   %@",gender);
+#pragma mark - HSChooseWhetherVCDelegate
+-(void)ChooseWhether:(HSChooseWhetherVC *)choosewhether selectedIs:(NSString *)is State:(NSInteger)state{
     if (state == 1) {
         self.swCircle.on = NO;
     }

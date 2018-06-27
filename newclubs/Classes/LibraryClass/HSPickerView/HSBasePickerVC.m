@@ -9,7 +9,7 @@
 #import "HSBasePickerVC.h"
 
 @interface HSBasePickerVC ()<UIPickerViewDelegate,UIPickerViewDataSource>
-@property (strong, nonatomic) UIView *selectView;
+//@property (strong, nonatomic) UIView *selectView;
 @property (strong, nonatomic) UIButton *cancleBtn;
 @property (strong, nonatomic) UIButton *ensureBtn;
 @property (strong, nonatomic) UILabel *pickerTitleLabel;

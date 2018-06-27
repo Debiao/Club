@@ -15,8 +15,11 @@
 @property (strong, nonatomic) UIPickerView *pickView;
 // 数据源
 @property(nonatomic,strong) NSArray<NSMutableArray*> *dataArray;
+@property (strong, nonatomic) UIView *selectView;
+
 // 取消
 -(void)cancleAction;
 // 确认
 -(void)ensureAction;
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event;
 @end

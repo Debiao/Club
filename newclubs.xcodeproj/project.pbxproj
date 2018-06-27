@@ -55,6 +55,7 @@
 		6B969E4D20DB546200735166 /* PX_TC_CG_LeftPicRightTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B969E4C20DB546200735166 /* PX_TC_CG_LeftPicRightTextButton.m */; };
 		6B9EAD6220CE082A008794CD /* PX_MC_BM_MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EAD6120CE082A008794CD /* PX_MC_BM_MyView.m */; };
 		6B9EAD6520CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EAD6420CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m */; };
+		DC646CA120E334C000328F20 /* HSChooseWhetherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA020E334C000328F20 /* HSChooseWhetherVC.m */; };
 		DC6BFEA320B3BADD007A1427 /* PX_MC_BM_MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6BFEA220B3BADD007A1427 /* PX_MC_BM_MyViewController.m */; };
 		DC6BFEA620B3BB6D007A1427 /* PX_MC_BM_CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6BFEA520B3BB6D007A1427 /* PX_MC_BM_CircleViewController.m */; };
 		DCA816ED20B669C4009714D8 /* UIBarButtonItem+PXBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA816EC20B669C4009714D8 /* UIBarButtonItem+PXBarButtonItem.m */; };
@@ -189,6 +190,8 @@
 		6B9EAD6420CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_TC_CG_TopPicDownTextButton.m; sourceTree = "<group>"; };
 		841067772A47D916D8C19CCE /* libPods-newclubs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newclubs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8338B36485BC89ACD43A7FD /* Pods-newclubs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newclubs.release.xcconfig"; path = "Pods/Target Support Files/Pods-newclubs/Pods-newclubs.release.xcconfig"; sourceTree = "<group>"; };
+		DC646C9F20E334C000328F20 /* HSChooseWhetherVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSChooseWhetherVC.h; sourceTree = "<group>"; };
+		DC646CA020E334C000328F20 /* HSChooseWhetherVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSChooseWhetherVC.m; sourceTree = "<group>"; };
 		DC6BFEA020B3AFAF007A1427 /* PX_TC_MC_BaseHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_TC_MC_BaseHeader.h; sourceTree = "<group>"; };
 		DC6BFEA120B3BADD007A1427 /* PX_MC_BM_MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyViewController.h; sourceTree = "<group>"; };
 		DC6BFEA220B3BADD007A1427 /* PX_MC_BM_MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyViewController.m; sourceTree = "<group>"; };
@@ -277,18 +280,20 @@
 		6B25AFDE20DCFECE00114739 /* HSPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				6B25AFDF20DCFECE00114739 /* HSAddressPickerVC.m */,
+				6B25AFE920DCFECE00114739 /* HSBasePickerVC.h */,
+				6B25AFE320DCFECE00114739 /* HSBasePickerVC.m */,
 				6B25AFE020DCFECE00114739 /* HSDatePickerVC.m */,
 				6B25AFE120DCFECE00114739 /* NSDate+Date.h */,
-				6B25AFE320DCFECE00114739 /* HSBasePickerVC.m */,
 				6B25AFE420DCFECE00114739 /* HSPickerViewTestVC.storyboard */,
 				6B25AFE520DCFECE00114739 /* NSDate+Date.m */,
 				6B25AFE620DCFECE00114739 /* HSDatePickerVC.h */,
 				6B25AFE720DCFECE00114739 /* HSAddressPickerVC.h */,
+				6B25AFDF20DCFECE00114739 /* HSAddressPickerVC.m */,
 				6B25AFE220DCFECE00114739 /* HSGenderPickerVC.h */,
 				6B25AFE820DCFECE00114739 /* HSGenderPickerVC.m */,
-				6B25AFE920DCFECE00114739 /* HSBasePickerVC.h */,
 				6B25AFEA20DCFECE00114739 /* HS_address.plist */,
+				DC646C9F20E334C000328F20 /* HSChooseWhetherVC.h */,
+				DC646CA020E334C000328F20 /* HSChooseWhetherVC.m */,
 			);
 			path = HSPickerView;
 			sourceTree = "<group>";
@@ -1109,6 +1114,7 @@
 				6B2CAAF620BFD51100984A46 /* PX_UM_RegisteredModel.m in Sources */,
 				6B37531F20D9FC38003289FF /* UITextView+ZWPlaceHolder.m in Sources */,
 				6B9EAD6220CE082A008794CD /* PX_MC_BM_MyView.m in Sources */,
+				DC646CA120E334C000328F20 /* HSChooseWhetherVC.m in Sources */,
 				6B267F8120CA21C700B2E2D7 /* PX_MC_BM_RecommendTextImgCell.m in Sources */,
 				6B25AFDD20DCE42100114739 /* PX_MC_BM_MyInfoViewController.m in Sources */,
 				DCC6BCC620B2750600BDC6C4 /* PX_BC_NavigationViewController.m in Sources */,
