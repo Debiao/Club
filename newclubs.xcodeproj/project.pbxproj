@@ -56,6 +56,9 @@
 		6B9EAD6220CE082A008794CD /* PX_MC_BM_MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EAD6120CE082A008794CD /* PX_MC_BM_MyView.m */; };
 		6B9EAD6520CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EAD6420CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m */; };
 		DC646CA120E334C000328F20 /* HSChooseWhetherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA020E334C000328F20 /* HSChooseWhetherVC.m */; };
+		DC646CA420E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA320E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m */; };
+		DC646CA720E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA620E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m */; };
+		DC646CAA20E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA920E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.m */; };
 		DC6BFEA320B3BADD007A1427 /* PX_MC_BM_MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6BFEA220B3BADD007A1427 /* PX_MC_BM_MyViewController.m */; };
 		DC6BFEA620B3BB6D007A1427 /* PX_MC_BM_CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6BFEA520B3BB6D007A1427 /* PX_MC_BM_CircleViewController.m */; };
 		DCA816ED20B669C4009714D8 /* UIBarButtonItem+PXBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA816EC20B669C4009714D8 /* UIBarButtonItem+PXBarButtonItem.m */; };
@@ -192,6 +195,12 @@
 		D8338B36485BC89ACD43A7FD /* Pods-newclubs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newclubs.release.xcconfig"; path = "Pods/Target Support Files/Pods-newclubs/Pods-newclubs.release.xcconfig"; sourceTree = "<group>"; };
 		DC646C9F20E334C000328F20 /* HSChooseWhetherVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSChooseWhetherVC.h; sourceTree = "<group>"; };
 		DC646CA020E334C000328F20 /* HSChooseWhetherVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSChooseWhetherVC.m; sourceTree = "<group>"; };
+		DC646CA220E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_TM_MyInfoHandle.h; sourceTree = "<group>"; };
+		DC646CA320E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_TM_MyInfoHandle.m; sourceTree = "<group>"; };
+		DC646CA520E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyInfoBaseModel.h; sourceTree = "<group>"; };
+		DC646CA620E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyInfoBaseModel.m; sourceTree = "<group>"; };
+		DC646CA820E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyDetailInfoModel.h; sourceTree = "<group>"; };
+		DC646CA920E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyDetailInfoModel.m; sourceTree = "<group>"; };
 		DC6BFEA020B3AFAF007A1427 /* PX_TC_MC_BaseHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_TC_MC_BaseHeader.h; sourceTree = "<group>"; };
 		DC6BFEA120B3BADD007A1427 /* PX_MC_BM_MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyViewController.h; sourceTree = "<group>"; };
 		DC6BFEA220B3BADD007A1427 /* PX_MC_BM_MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyViewController.m; sourceTree = "<group>"; };
@@ -497,6 +506,8 @@
 		DCC6BC8D20B26CCE00BDC6C4 /* Handle */ = {
 			isa = PBXGroup;
 			children = (
+				DC646CA220E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.h */,
+				DC646CA320E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m */,
 			);
 			path = Handle;
 			sourceTree = "<group>";
@@ -504,6 +515,10 @@
 		DCC6BC8E20B26CCE00BDC6C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DC646CA520E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.h */,
+				DC646CA620E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m */,
+				DC646CA820E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.h */,
+				DC646CA920E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1078,6 +1093,7 @@
 				DCA816F020B68F92009714D8 /* PX_TC_CG_UIKitTool.m in Sources */,
 				6B25AFDA20DCD98100114739 /* PX_MC_BM_MyApplyHistoryViewController.m in Sources */,
 				6B25AFCE20DCD0BA00114739 /* PX_MC_BM_MyResponseViewController.m in Sources */,
+				DC646CA720E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m in Sources */,
 				DCC6BCB120B26CCE00BDC6C4 /* AppDelegate.m in Sources */,
 				6B25AFEB20DCFECF00114739 /* HSAddressPickerVC.m in Sources */,
 				6B70DFC720C51353001B7595 /* PX_MC_BM_RecommendHandle.m in Sources */,
@@ -1087,6 +1103,7 @@
 				6B48B9C220BBAD4900CA59C9 /* PX_UM_LoginView.m in Sources */,
 				6B2CAAFC20BFE90300984A46 /* PX_UM_LoginModel.m in Sources */,
 				6B27D16D20D1006000B2B59E /* PX_MC_BM_CircleHandle.m in Sources */,
+				DC646CAA20E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.m in Sources */,
 				6B37532B20DA3BE6003289FF /* UILablePadding.m in Sources */,
 				6B25AFF020DCFECF00114739 /* HSGenderPickerVC.m in Sources */,
 				6B2CAAF320BFD10D00984A46 /* PX_UM_RegisteredHandle.m in Sources */,
@@ -1116,6 +1133,7 @@
 				6B9EAD6220CE082A008794CD /* PX_MC_BM_MyView.m in Sources */,
 				DC646CA120E334C000328F20 /* HSChooseWhetherVC.m in Sources */,
 				6B267F8120CA21C700B2E2D7 /* PX_MC_BM_RecommendTextImgCell.m in Sources */,
+				DC646CA420E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m in Sources */,
 				6B25AFDD20DCE42100114739 /* PX_MC_BM_MyInfoViewController.m in Sources */,
 				DCC6BCC620B2750600BDC6C4 /* PX_BC_NavigationViewController.m in Sources */,
 				6B2CAAFF20C101FB00984A46 /* PX_UM_RegisteredWebViewController.m in Sources */,

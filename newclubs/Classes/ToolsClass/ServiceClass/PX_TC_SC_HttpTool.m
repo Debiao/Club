@@ -40,7 +40,7 @@ static NSString * kBaseUrl = @"";
       
         NSString *authorization =  [NSString stringWithFormat:@"%@ %@",@"Bearer",[PX_UserDefaults objectForKey:@"token"]];
         [client.requestSerializer setValue:authorization forHTTPHeaderField:@"Authorization"];
-        [client.requestSerializer setValue:@"device-uuihhhhd1111hhhh" forHTTPHeaderField:@"device-uuid"];
+        [client.requestSerializer setValue:@"device-uuihhhhd1111hhhhhhh" forHTTPHeaderField:@"device-uuid"];
         [client.requestSerializer setValue:@"user-agent" forHTTPHeaderField:@"user-agent"];
         
     });

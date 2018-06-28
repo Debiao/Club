@@ -9,13 +9,17 @@
 #import "PX_MC_BM_MyInfoViewController.h"
 #import "HSDatePickerVC.h"
 #import "HSGenderPickerVC.h"
+#import "PX_MC_BM_TM_MyInfoHandle.h"
+#import "PX_MC_BM_MyInfoBaseModel.h"
+#import "PX_MC_BM_MyDetailInfoModel.h"
 
 @interface PX_MC_BM_MyInfoViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,HSDatePickerVCDelegate,UITextFieldDelegate,HSGenderPickerVCDelegate>
 @property (nonatomic, strong) UITableView *myInfoTableView;
-@property (nonatomic, strong) UIImageView *img;
+@property (nonatomic, strong) UIImageView *img,*img1;
 @property (nonatomic, strong) UITableViewCell *cell;
-@property (nonatomic, strong) NSString *strBirthday,*trans_name, *trans_qianming, *trans_sex, *trans_zb,*strGender;
+@property (nonatomic, strong) NSString *strBirthday,*trans_name, *trans_qianming, *trans_sex, *trans_zb,*strGender,*tagPhoto;
 @property (nonatomic, strong) UIImage *pxPhoto;
+@property (nonatomic, strong) NSString *strPhoto;
 @end
 
 @implementation PX_MC_BM_MyInfoViewController
@@ -24,8 +28,34 @@
     [super viewDidLoad];
     self.title = @"个人信息";
     [self myInfoTableView];
+    
+    [self PxHandleData];
     // Do any additional setup after loading the view.
 }
+
+- (void)PxHandleData{
+    [PX_MC_BM_TM_MyInfoHandle performaMyInfnSuccess:^(id obj) {
+        
+        PX_MC_BM_MyInfoBaseModel *model = obj;
+        
+        self.strPhoto = model.data.avatar;
+        self.trans_name = model.data.realname;
+        self.trans_qianming = model.data.mood;
+        
+        if (model.data.sex == 1) {
+            self.strGender = @"男";
+        }else{
+            self.strGender = @"女";
+        }
+        
+        self.strBirthday = [model.data.birthday substringToIndex:10];
+        
+        [self.myInfoTableView reloadData];
+    } failure:^(id obj) {
+        
+    }];
+}
+
 
 #pragma mark --lazy
 - (UITableView *)myInfoTableView{
@@ -105,21 +135,29 @@
                 _img.layer.masksToBounds = YES;
                 _cell.accessoryView =_img;
     
+                
+                if ([_tagPhoto isEqualToString: @"1"]){
+                     _img.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.strPhoto]]];
+                }else{
+                
                 //如果服务器返回的数据中 ,图片为空,使用默认图片if 默认是  FALSE
                 if(_pxPhoto)
                 {
-                     _img.image = _pxPhoto;
-                  
-                    //头像
-                    // _img.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:iconUrl]]];
+                    _img.image = _pxPhoto;
                 }else{
-
-                _img.image= [UIImage imageNamed:@"ic_button_circle_photo_add"];
-
+                    if (self.strPhoto) {
+                        //头像
+                        _img.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.strPhoto]]];
+                        
+                    }else{
+                       _img.image= [UIImage imageNamed:@"ic_button_circle_photo_add"];
+                       
+                    }
+ 
                 }
-                
-   
-        
+                    
+                    
+                }
                 
             } else if (indexPath.row==1) {
                 _cell.textLabel.text=@"姓名";
@@ -138,7 +176,36 @@
                     text.text = _trans_name;
                 }
                 
+            }else if (indexPath.row==2) {
+                _cell.textLabel.text=@"性别";
+                if (_strGender.length>0) {
+                    _cell.detailTextLabel.text = _strGender;
+                    
+                }else{
+                    _cell.detailTextLabel.text = @"请选择性别";
+                    
+                }
+                //cell.imageView.image=[UIImage imageNamed:@"my2"];
+                
             }else{
+                _cell.textLabel.text=@"生日";
+                
+                if (_strBirthday.length>0) {
+                    _cell.detailTextLabel.text = _strBirthday;
+                    
+                }else{
+                    _cell.detailTextLabel.text = @"请选择生日";
+                    
+                }
+            }
+            
+        }
+            break;
+            
+        default: {
+            
+            if (indexPath.row==0) {
+                
                 _cell.textLabel.text=@"签名";
                 //cell.detailTextLabel.text = @"请填写姓名";
                 
@@ -153,40 +220,38 @@
                     text.text = _trans_qianming;
                 }
                 
-            }
-            
-        }
-            break;
-            
-        default: {
-            
-            if (indexPath.row==0) {
-                _cell.textLabel.text=@"性别";
-                if (_strGender.length>0) {
-                    _cell.detailTextLabel.text = _strGender;
-                    
-                }else{
-                    _cell.detailTextLabel.text = @"请选择性别";
-                    
-                }
-                //cell.imageView.image=[UIImage imageNamed:@"my2"];
-            } else if (indexPath.row==1) {
-                _cell.textLabel.text=@"生日";
                 
-                if (_strBirthday.length>0) {
-                    _cell.detailTextLabel.text = _strBirthday;
-                    
-                }else{
-                    _cell.detailTextLabel.text = @"请选择生日";
-                    
-                }
-                
-                //cell.imageView.image=[UIImage imageNamed:@"卡包"];
+               
             }else{
                 _cell.textLabel.text=@"装扮";
-                _cell.detailTextLabel.text = @"请装扮";
+            
+                _img1 = [[UIImageView alloc]init];
+                _img1.frame = CGRectMake(0, 0, 50, 50);
+                _img1.layer.cornerRadius = 5;
+                _img1.layer.masksToBounds = YES;
+                _cell.accessoryView =_img1;
                 
-                //cell.imageView.image=[UIImage imageNamed:@"设置"];
+                if ([_tagPhoto isEqualToString: @"1"]) {
+                    if(_pxPhoto)
+                    {
+                        _img1.image = _pxPhoto;
+                    }else{
+                        if (self.strPhoto) {
+                            //头像
+                            _img1.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.strPhoto]]];
+                            
+                        }else{
+                            _img1.image= [UIImage imageNamed:@"ic_button_circle_photo_add"];
+                            
+                        }
+                        
+                    }
+                }
+                //如果服务器返回的数据中 ,图片为空,使用默认图片if 默认是  FALSE
+                
+                
+                
+                
             }
             
             
@@ -207,10 +272,10 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     switch (section) {
         case 0:
-            return 3;
+            return 4;
             break;
         default:
-            return 3;
+            return 2;
             break;
     }
 }
@@ -223,21 +288,29 @@
             switch (indexPath.row) {
                 case 0:  {
                     [self alterHeadPortrait:nil];
+                    _tagPhoto = @"2";
                 }
                     break;
                     
-                case 1: {
-                    
+                case 1:  {
+                }
+                    break;
+                case 2:  {
+                     HSGenderPickerVC *vc = [[HSGenderPickerVC alloc] init];
+                    vc.delegate = self;
+                    [self presentViewController:vc animated:YES completion:nil];
+                }
+                    break;
+                  
+                default:
+                {
+                    HSDatePickerVC *vc = [[HSDatePickerVC alloc] init];
+                    vc.delegate = self;
+                    [self presentViewController:vc animated:YES completion:nil];
                     
                 }
-                    
-                    break;
-                    //                case 2: {
-                    //                    //                    SD_Me_SettingController *SettingVc=[[SD_Me_SettingController alloc] init];
-                    //                    //                    [self.navigationController pushViewController:SettingVc animated:YES];
-                    //                }
-                    
-                    break;
+                break;
+
             }
             break;
         }
@@ -248,16 +321,14 @@
                 case 1:{
                     switch (indexPath.row) {
                         case 0:  {
-                            HSGenderPickerVC *vc = [[HSGenderPickerVC alloc] init];
-                            vc.delegate = self;
-                            [self presentViewController:vc animated:YES completion:nil];
+                           
                         }
                             break;
                             
                         case 1:  {
-                            HSDatePickerVC *vc = [[HSDatePickerVC alloc] init];
-                            vc.delegate = self;
-                            [self presentViewController:vc animated:YES completion:nil];
+                             [self alterHeadPortrait:nil];
+                            _tagPhoto = @"1";
+                            
                         }
                             break;
                             
@@ -282,7 +353,11 @@
             return 60;
         }
     }
-    
+    if (indexPath.section == 1) {
+        if (indexPath.row==1) {
+            return 60;
+        }
+    }
     return 44;
     
 }
