@@ -12,4 +12,14 @@
 //我的⽤用户详情
 + (void)performaMyInfnSuccess:(SucessBlock)success
                           failure:(FailedBlock)failure;
+
+//修改性别
++ (void)performaMyInfoSex:(NSInteger)SexValue Success:(SucessBlock)success
+                      failure:(FailedBlock)failure;
+//修改生日
++ (void)performaMyInfoBirthday:(NSString *)birthday Success:(SucessBlock)success
+                  failure:(FailedBlock)failure;
+//修改签名
++ (void)performaMyInfoMood:(NSString *)mood Success:(SucessBlock)success
+                       failure:(FailedBlock)failure;
 @end

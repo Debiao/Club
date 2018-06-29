@@ -24,4 +24,45 @@
     
 
 }
+
+//修改性别
++ (void)performaMyInfoSex:(NSInteger)SexValue Success:(SucessBlock)success
+                  failure:(FailedBlock)failure{
+    
+    NSDictionary *dic = @{
+                          @"value":@(SexValue),
+                          };
+    
+    [PX_TC_SC_HttpTool postWithPath:NEWCLUBSURL(MODSEX)  params:dic success:^(id json) {
+       
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+//修改生日
++ (void)performaMyInfoBirthday:(NSString *)birthday Success:(SucessBlock)success
+                       failure:(FailedBlock)failure{
+    NSDictionary *dic = @{
+                          @"value":birthday
+                          };
+    
+    [PX_TC_SC_HttpTool postWithPath:NEWCLUBSURL(MODBIRTHDAY)  params:dic success:^(id json) {
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+//修改签名
++ (void)performaMyInfoMood:(NSString *)mood Success:(SucessBlock)success
+                   failure:(FailedBlock)failure{
+    NSDictionary *dic = @{
+                          @"value":mood
+                          };
+    
+    [PX_TC_SC_HttpTool postWithPath:NEWCLUBSURL(MODMOOD)  params:dic success:^(id json) {
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 @end

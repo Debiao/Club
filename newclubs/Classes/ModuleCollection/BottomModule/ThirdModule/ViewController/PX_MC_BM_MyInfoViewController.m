@@ -21,6 +21,8 @@
 @property (nonatomic, strong) UIImage *pxPhoto;
 @property (nonatomic, strong) NSString *strPhoto;
 @property (nonatomic, strong) NSString *strBackgroundPic;
+
+@property (nonatomic, strong) UITextField *tfText;
 @end
 
 @implementation PX_MC_BM_MyInfoViewController
@@ -48,6 +50,12 @@
             self.strGender = @"男";
         }else{
             self.strGender = @"女";
+        }
+        
+        if (model.data.nickname == nil) {
+            self.tfText.tag = 101;
+        }else{
+            self.tfText.tag = 102;
         }
         
         self.strBirthday = [model.data.birthday substringToIndex:10];
@@ -137,7 +145,6 @@
                 _img.layer.masksToBounds = YES;
                 _cell.accessoryView =_img;
     
-                
                 if (self.strPhoto) {
                     
                     if ([_tagPhoto isEqualToString: @"1"]) {
@@ -156,20 +163,19 @@
                 }
                 
             } else if (indexPath.row==1) {
-                _cell.textLabel.text=@"姓名";
+                
+                _cell.textLabel.text=@"昵称";
                 //cell.detailTextLabel.text = @"请填写姓名";
+               _tfText = [[UITextField alloc]init];
+                _tfText.placeholder = @"请填写昵称";
+                _tfText.textAlignment = NSTextAlignmentRight;
+                _tfText.frame = CGRectMake(0, 0, 200, 44);
+                _cell.accessoryView = _tfText;
                 
-                UITextField *text = [[UITextField alloc]init];
-                text.placeholder = @"请填写姓名";
-                text.textAlignment = NSTextAlignmentRight;
-                text.frame = CGRectMake(0, 0, 200, 44);
-                _cell.accessoryView =text;
-                
-                text.delegate = self;
-                text.tag = 100+1;
-                //cell.imageView.image=[UIImage imageNamed:@"卡包"];
+                _tfText.delegate = self;
+                _tfText.tag = 100+1;
                 if (_trans_name.length>0) {
-                    text.text = _trans_name;
+                    _tfText.text = _trans_name;
                 }
                 
             }else if (indexPath.row==2) {
@@ -205,15 +211,15 @@
                 _cell.textLabel.text=@"签名";
                 //cell.detailTextLabel.text = @"请填写姓名";
                 
-                UITextField *text = [[UITextField alloc]init];
-                text.placeholder = @"请填写签名";
-                text.textAlignment = NSTextAlignmentRight;
-                text.frame = CGRectMake(0, 0, 200, 44);
-                _cell.accessoryView =text;
-                text.delegate = self;
-                text.tag = 100+2;
+                _tfText = [[UITextField alloc]init];
+                _tfText.placeholder = @"请填写签名";
+                _tfText.textAlignment = NSTextAlignmentRight;
+                _tfText.frame = CGRectMake(0, 0, 200, 44);
+                _cell.accessoryView =_tfText;
+                _tfText.delegate = self;
+                _tfText.tag = 100+2;
                 if (_trans_qianming.length>0) {
-                    text.text = _trans_qianming;
+                    _tfText.text = _trans_qianming;
                 }
                 
                 
@@ -411,12 +417,34 @@
 {
     NSLog(@"选择了   %@--%@--%@",year,month,day);
     _strBirthday = [NSString stringWithFormat:@"%@-%@-%@",year,month,day];
+    
+    [PX_MC_BM_TM_MyInfoHandle performaMyInfoBirthday:_strBirthday Success:^(id obj) {
+        
+    } failure:^(id obj) {
+        
+    }];
+    
+    
     [self.myInfoTableView reloadData];
     
 }
 #pragma mark - HSGenderPickerVCDelegate
 - (void)genderPicker:(HSGenderPickerVC *)genderPicker selectedGernder:(NSString *)gender{
     _strGender = gender;
+    
+    int pxIntSex;
+    if ([gender isEqualToString:@"男"]) {
+        pxIntSex = 1;
+    }else{
+        pxIntSex = 2;
+    }
+    
+    [PX_MC_BM_TM_MyInfoHandle performaMyInfoSex:pxIntSex Success:^(id obj) {
+        
+    } failure:^(id obj) {
+        
+    }];
+    
     [self.myInfoTableView reloadData];
 }
 
@@ -441,11 +469,27 @@
     }
     
 }
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+   
+    if (textField.tag == 101) {
+        [self.view makeToast:@"昵称不可以修改"];
+         return NO;
+    } else {
+        return YES;
+    }
+    
+}
 //键盘确定搜索的点击事件
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     NSLog(@"点击搜索的逻辑");
     
+    [PX_MC_BM_TM_MyInfoHandle performaMyInfoMood:_trans_qianming Success:^(id obj) {
+        
+    } failure:^(id obj) {
+        
+    }];
     return YES;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{

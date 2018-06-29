@@ -32,4 +32,17 @@
 //18查找话题列列表
 #define TOPICLIST @"/api/topic/index"
 
+//15. 修改昵称(*)
+#define MODNICKNAME @"/api/user/modnickname"
+
+//13. 修改性别(*)
+#define MODSEX @"/api/user/modsex"
+
+//12. 修改⽣日(*)
+#define MODBIRTHDAY @"/api/user/modbirthday"
+
+//14. 修改签名(*)
+#define MODMOOD @"/api/user/modmood"
+
+
 #endif /* PX_TC_MC_HttpHeader_h */
