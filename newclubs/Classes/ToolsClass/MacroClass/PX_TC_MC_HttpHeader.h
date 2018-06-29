@@ -44,5 +44,7 @@
 //14. 修改签名(*)
 #define MODMOOD @"/api/user/modmood"
 
+//?? 历史回复
+#define HISTORYLIST @"/api/user/historylist"
 
 #endif /* PX_TC_MC_HttpHeader_h */

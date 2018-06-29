@@ -54,6 +54,7 @@
     [self myTableView];
     [self createBtnTopic];
     
+    NSLog(@"棒槌%@",[PX_UserDefaults objectForKey:@"token"]);
     
    // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(drawView) name:@"ModifyUsernformation" object:nil];
     

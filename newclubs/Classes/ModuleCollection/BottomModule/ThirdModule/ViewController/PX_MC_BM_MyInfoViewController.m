@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UIImage *pxPhoto;
 @property (nonatomic, strong) NSString *strPhoto;
 @property (nonatomic, strong) NSString *strBackgroundPic;
+@property (nonatomic, assign) BOOL isModify;
 
 @property (nonatomic, strong) UITextField *tfText;
 @end
@@ -52,10 +53,10 @@
             self.strGender = @"女";
         }
         
-        if (model.data.nickname == nil) {
-            self.tfText.tag = 101;
+        if ([model.data.nickname isEqualToString:@""]) {
+            self.isModify = NO;
         }else{
-            self.tfText.tag = 102;
+            self.isModify = YES;
         }
         
         self.strBirthday = [model.data.birthday substringToIndex:10];
@@ -472,11 +473,11 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
    
-    if (textField.tag == 101) {
+    if (self.isModify) {
         [self.view makeToast:@"昵称不可以修改"];
          return NO;
     } else {
-        return YES;
+         return YES;
     }
     
 }

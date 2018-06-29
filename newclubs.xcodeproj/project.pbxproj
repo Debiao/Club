@@ -53,12 +53,16 @@
 		6B68F30820D9012D00995AA3 /* PX_MC_BM_CreateCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B68F30720D9012D00995AA3 /* PX_MC_BM_CreateCircleViewController.m */; };
 		6B70DFC720C51353001B7595 /* PX_MC_BM_RecommendHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B70DFC620C51353001B7595 /* PX_MC_BM_RecommendHandle.m */; };
 		6B969E4D20DB546200735166 /* PX_TC_CG_LeftPicRightTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B969E4C20DB546200735166 /* PX_TC_CG_LeftPicRightTextButton.m */; };
-		6B9EAD6220CE082A008794CD /* PX_MC_BM_MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EAD6120CE082A008794CD /* PX_MC_BM_MyView.m */; };
 		6B9EAD6520CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EAD6420CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m */; };
 		DC646CA120E334C000328F20 /* HSChooseWhetherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA020E334C000328F20 /* HSChooseWhetherVC.m */; };
 		DC646CA420E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA320E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m */; };
 		DC646CA720E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA620E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m */; };
 		DC646CAA20E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA920E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.m */; };
+		DC646CAD20E6088800328F20 /* PX_MC_BM_MyTopicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CAC20E6088800328F20 /* PX_MC_BM_MyTopicTableViewCell.m */; };
+		DC646CB020E60B7F00328F20 /* PX_MC_BM_MyTopicBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CAF20E60B7F00328F20 /* PX_MC_BM_MyTopicBaseModel.m */; };
+		DC646CB320E60C4800328F20 /* PX_MC_BM_MyTopicDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CB220E60C4800328F20 /* PX_MC_BM_MyTopicDetailModel.m */; };
+		DC646CB620E60CD000328F20 /* PX_MC_BM_MyTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CB520E60CD000328F20 /* PX_MC_BM_MyTopicModel.m */; };
+		DC646CB920E60DA700328F20 /* PX_MC_BM_MyTopicAttributeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CB820E60DA700328F20 /* PX_MC_BM_MyTopicAttributeModel.m */; };
 		DC6BFEA320B3BADD007A1427 /* PX_MC_BM_MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6BFEA220B3BADD007A1427 /* PX_MC_BM_MyViewController.m */; };
 		DC6BFEA620B3BB6D007A1427 /* PX_MC_BM_CircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6BFEA520B3BB6D007A1427 /* PX_MC_BM_CircleViewController.m */; };
 		DCA816ED20B669C4009714D8 /* UIBarButtonItem+PXBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA816EC20B669C4009714D8 /* UIBarButtonItem+PXBarButtonItem.m */; };
@@ -187,8 +191,6 @@
 		6B70DFC620C51353001B7595 /* PX_MC_BM_RecommendHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_RecommendHandle.m; sourceTree = "<group>"; };
 		6B969E4B20DB546200735166 /* PX_TC_CG_LeftPicRightTextButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_TC_CG_LeftPicRightTextButton.h; sourceTree = "<group>"; };
 		6B969E4C20DB546200735166 /* PX_TC_CG_LeftPicRightTextButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_TC_CG_LeftPicRightTextButton.m; sourceTree = "<group>"; };
-		6B9EAD6020CE082A008794CD /* PX_MC_BM_MyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyView.h; sourceTree = "<group>"; };
-		6B9EAD6120CE082A008794CD /* PX_MC_BM_MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyView.m; sourceTree = "<group>"; };
 		6B9EAD6320CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_TC_CG_TopPicDownTextButton.h; sourceTree = "<group>"; };
 		6B9EAD6420CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_TC_CG_TopPicDownTextButton.m; sourceTree = "<group>"; };
 		841067772A47D916D8C19CCE /* libPods-newclubs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newclubs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +203,16 @@
 		DC646CA620E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyInfoBaseModel.m; sourceTree = "<group>"; };
 		DC646CA820E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyDetailInfoModel.h; sourceTree = "<group>"; };
 		DC646CA920E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyDetailInfoModel.m; sourceTree = "<group>"; };
+		DC646CAB20E6088800328F20 /* PX_MC_BM_MyTopicTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyTopicTableViewCell.h; sourceTree = "<group>"; };
+		DC646CAC20E6088800328F20 /* PX_MC_BM_MyTopicTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyTopicTableViewCell.m; sourceTree = "<group>"; };
+		DC646CAE20E60B7F00328F20 /* PX_MC_BM_MyTopicBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyTopicBaseModel.h; sourceTree = "<group>"; };
+		DC646CAF20E60B7F00328F20 /* PX_MC_BM_MyTopicBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyTopicBaseModel.m; sourceTree = "<group>"; };
+		DC646CB120E60C4800328F20 /* PX_MC_BM_MyTopicDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyTopicDetailModel.h; sourceTree = "<group>"; };
+		DC646CB220E60C4800328F20 /* PX_MC_BM_MyTopicDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyTopicDetailModel.m; sourceTree = "<group>"; };
+		DC646CB420E60CD000328F20 /* PX_MC_BM_MyTopicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyTopicModel.h; sourceTree = "<group>"; };
+		DC646CB520E60CD000328F20 /* PX_MC_BM_MyTopicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyTopicModel.m; sourceTree = "<group>"; };
+		DC646CB720E60DA700328F20 /* PX_MC_BM_MyTopicAttributeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyTopicAttributeModel.h; sourceTree = "<group>"; };
+		DC646CB820E60DA700328F20 /* PX_MC_BM_MyTopicAttributeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyTopicAttributeModel.m; sourceTree = "<group>"; };
 		DC6BFEA020B3AFAF007A1427 /* PX_TC_MC_BaseHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_TC_MC_BaseHeader.h; sourceTree = "<group>"; };
 		DC6BFEA120B3BADD007A1427 /* PX_MC_BM_MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyViewController.h; sourceTree = "<group>"; };
 		DC6BFEA220B3BADD007A1427 /* PX_MC_BM_MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyViewController.m; sourceTree = "<group>"; };
@@ -519,6 +531,14 @@
 				DC646CA620E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m */,
 				DC646CA820E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.h */,
 				DC646CA920E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.m */,
+				DC646CAE20E60B7F00328F20 /* PX_MC_BM_MyTopicBaseModel.h */,
+				DC646CAF20E60B7F00328F20 /* PX_MC_BM_MyTopicBaseModel.m */,
+				DC646CB420E60CD000328F20 /* PX_MC_BM_MyTopicModel.h */,
+				DC646CB520E60CD000328F20 /* PX_MC_BM_MyTopicModel.m */,
+				DC646CB120E60C4800328F20 /* PX_MC_BM_MyTopicDetailModel.h */,
+				DC646CB220E60C4800328F20 /* PX_MC_BM_MyTopicDetailModel.m */,
+				DC646CB720E60DA700328F20 /* PX_MC_BM_MyTopicAttributeModel.h */,
+				DC646CB820E60DA700328F20 /* PX_MC_BM_MyTopicAttributeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -526,8 +546,8 @@
 		DCC6BC8F20B26CCE00BDC6C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6B9EAD6020CE082A008794CD /* PX_MC_BM_MyView.h */,
-				6B9EAD6120CE082A008794CD /* PX_MC_BM_MyView.m */,
+				DC646CAB20E6088800328F20 /* PX_MC_BM_MyTopicTableViewCell.h */,
+				DC646CAC20E6088800328F20 /* PX_MC_BM_MyTopicTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1083,6 +1103,7 @@
 				6B27D18220D1153C00B2B59E /* PX_MC_BM_CircleFamilySettingDetailModel.m in Sources */,
 				6B969E4D20DB546200735166 /* PX_TC_CG_LeftPicRightTextButton.m in Sources */,
 				6B1F12BE20C783F000793E30 /* PX_MC_BM_RecommendAttributeModel.m in Sources */,
+				DC646CB020E60B7F00328F20 /* PX_MC_BM_MyTopicBaseModel.m in Sources */,
 				6B25AFD120DCD0E000114739 /* PX_MC_BM_MyFavoriteViewController.m in Sources */,
 				6B27D17C20D1130D00B2B59E /* PX_MC_BM_CircleFamilyDetailModel.m in Sources */,
 				DCC6BCD120B2B23100BDC6C4 /* PX_TC_TB_TabBarView.m in Sources */,
@@ -1116,10 +1137,12 @@
 				6B1F12CD20C7C3DD00793E30 /* PX_MC_BM_RecommendTextCell.m in Sources */,
 				6B1F12C120C7888D00793E30 /* PX_MC_BM_RecommendArrayDetailInfoModel.m in Sources */,
 				DCC6BCC320B273F000BDC6C4 /* PX_BC_TabBarViewController.m in Sources */,
+				DC646CB320E60C4800328F20 /* PX_MC_BM_MyTopicDetailModel.m in Sources */,
 				6B25AFD420DCD11700114739 /* PX_MC_BM_MyFootprintViewController.m in Sources */,
 				DC6BFEA320B3BADD007A1427 /* PX_MC_BM_MyViewController.m in Sources */,
 				6B25AFEF20DCFECF00114739 /* NSDate+Date.m in Sources */,
 				DCA816ED20B669C4009714D8 /* UIBarButtonItem+PXBarButtonItem.m in Sources */,
+				DC646CAD20E6088800328F20 /* PX_MC_BM_MyTopicTableViewCell.m in Sources */,
 				6B37532220D9FFA7003289FF /* UITextView+ZWLimitCounter.m in Sources */,
 				6B48B9BF20BBAD1D00CA59C9 /* PX_UM_LoginViewController.m in Sources */,
 				6B25AFED20DCFECF00114739 /* HSBasePickerVC.m in Sources */,
@@ -1130,7 +1153,6 @@
 				6B1F12BB20C7832A00793E30 /* PX_MC_BM_RecommendBaseModel.m in Sources */,
 				6B2CAAF620BFD51100984A46 /* PX_UM_RegisteredModel.m in Sources */,
 				6B37531F20D9FC38003289FF /* UITextView+ZWPlaceHolder.m in Sources */,
-				6B9EAD6220CE082A008794CD /* PX_MC_BM_MyView.m in Sources */,
 				DC646CA120E334C000328F20 /* HSChooseWhetherVC.m in Sources */,
 				6B267F8120CA21C700B2E2D7 /* PX_MC_BM_RecommendTextImgCell.m in Sources */,
 				DC646CA420E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m in Sources */,
@@ -1139,6 +1161,8 @@
 				6B2CAAFF20C101FB00984A46 /* PX_UM_RegisteredWebViewController.m in Sources */,
 				6B25AFD720DCD92800114739 /* PX_MC_BM_MyIntegralViewController.m in Sources */,
 				6B27D17020D10EDA00B2B59E /* PX_MC_BM_CircleBaseModel.m in Sources */,
+				DC646CB620E60CD000328F20 /* PX_MC_BM_MyTopicModel.m in Sources */,
+				DC646CB920E60DA700328F20 /* PX_MC_BM_MyTopicAttributeModel.m in Sources */,
 				6B9EAD6520CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m in Sources */,
 				6B27D17320D10FC900B2B59E /* PX_MC_BM_CircleArrayDetailInfoModel.m in Sources */,
 				DCC6BCC020B2705A00BDC6C4 /* PX_BC_ViewController.m in Sources */,

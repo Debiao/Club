@@ -22,4 +22,9 @@
 //修改签名
 + (void)performaMyInfoMood:(NSString *)mood Success:(SucessBlock)success
                        failure:(FailedBlock)failure;
+//历史回复
++ (void)performaTopicHistoryType:(NSInteger)type Page:(NSInteger)page Success:(SucessBlock)success
+                      failure:(FailedBlock)failure;
+
+
 @end

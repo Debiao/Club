@@ -8,6 +8,8 @@
 
 #import "PX_MC_BM_TM_MyInfoHandle.h"
 #import "PX_MC_BM_MyInfoBaseModel.h"
+#import "PX_MC_BM_MyTopicBaseModel.h"
+
 @implementation PX_MC_BM_TM_MyInfoHandle
 
 //我的⽤用户详情
@@ -61,6 +63,21 @@
     
     [PX_TC_SC_HttpTool postWithPath:NEWCLUBSURL(MODMOOD)  params:dic success:^(id json) {
         
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+//历史回复
++ (void)performaTopicHistoryType:(NSInteger)type Page:(NSInteger)page Success:(SucessBlock)success
+                         failure:(FailedBlock)failure{
+    NSDictionary *dic = @{
+                          @"page":@(page),
+                          @"type":@(type)
+                          };
+    
+    [PX_TC_SC_HttpTool postWithPath:NEWCLUBSURL(HISTORYLIST)  params:dic success:^(id json) {
+        PX_MC_BM_MyTopicBaseModel *data = [PX_MC_BM_MyTopicBaseModel mj_objectWithKeyValues:json];
+        success(data);
     } failure:^(NSError *error) {
         failure(error);
     }];
