@@ -15,11 +15,12 @@
 
 @interface PX_MC_BM_MyInfoViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,HSDatePickerVCDelegate,UITextFieldDelegate,HSGenderPickerVCDelegate>
 @property (nonatomic, strong) UITableView *myInfoTableView;
-@property (nonatomic, strong) UIImageView *img,*img1;
+@property (nonatomic, strong) UIImageView *img;
 @property (nonatomic, strong) UITableViewCell *cell;
 @property (nonatomic, strong) NSString *strBirthday,*trans_name, *trans_qianming, *trans_sex, *trans_zb,*strGender,*tagPhoto;
 @property (nonatomic, strong) UIImage *pxPhoto;
 @property (nonatomic, strong) NSString *strPhoto;
+@property (nonatomic, strong) NSString *strBackgroundPic;
 @end
 
 @implementation PX_MC_BM_MyInfoViewController
@@ -41,6 +42,7 @@
         self.strPhoto = model.data.avatar;
         self.trans_name = model.data.realname;
         self.trans_qianming = model.data.mood;
+        self.strBackgroundPic = model.data.topicon;
         
         if (model.data.sex == 1) {
             self.strGender = @"男";
@@ -136,27 +138,21 @@
                 _cell.accessoryView =_img;
     
                 
-                if ([_tagPhoto isEqualToString: @"1"]){
-                     _img.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.strPhoto]]];
-                }else{
-                
-                //如果服务器返回的数据中 ,图片为空,使用默认图片if 默认是  FALSE
-                if(_pxPhoto)
-                {
-                    _img.image = _pxPhoto;
-                }else{
-                    if (self.strPhoto) {
-                        //头像
-                        _img.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.strPhoto]]];
-                        
+                if (self.strPhoto) {
+                    
+                    if ([_tagPhoto isEqualToString: @"1"]) {
+                        _img.image = _pxPhoto;
                     }else{
-                       _img.image= [UIImage imageNamed:@"ic_button_circle_photo_add"];
-                       
+                        _img.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.strPhoto]]];
                     }
- 
-                }
-                    
-                    
+                   
+                }else{
+                   
+                    if ([_tagPhoto isEqualToString: @"1"]) {
+                        _img.image = _pxPhoto;
+                    }else{
+                         _img.image= [UIImage imageNamed:@"ic_button_circle_photo_add"];
+                    }
                 }
                 
             } else if (indexPath.row==1) {
@@ -223,32 +219,31 @@
                 
                
             }else{
-                _cell.textLabel.text=@"装扮";
+                _cell.textLabel.text=@"装扮背景";
             
-                _img1 = [[UIImageView alloc]init];
-                _img1.frame = CGRectMake(0, 0, 50, 50);
-                _img1.layer.cornerRadius = 5;
-                _img1.layer.masksToBounds = YES;
-                _cell.accessoryView =_img1;
+                _img = [[UIImageView alloc]init];
+                _img.frame = CGRectMake(0, 0, 50, 50);
+                _img.layer.cornerRadius = 5;
+                _img.layer.masksToBounds = YES;
+                _cell.accessoryView =_img;
                 
-                if ([_tagPhoto isEqualToString: @"1"]) {
-                    if(_pxPhoto)
-                    {
-                        _img1.image = _pxPhoto;
+                
+                if (self.strPhoto) {
+                    
+                    if ([_tagPhoto isEqualToString: @"2"]) {
+                        _img.image = _pxPhoto;
                     }else{
-                        if (self.strPhoto) {
-                            //头像
-                            _img1.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.strPhoto]]];
-                            
-                        }else{
-                            _img1.image= [UIImage imageNamed:@"ic_button_circle_photo_add"];
-                            
-                        }
-                        
+                        _img.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.strPhoto]]];
+                    }
+                    
+                }else{
+                    
+                    if ([_tagPhoto isEqualToString: @"2"]) {
+                        _img.image = _pxPhoto;
+                    }else{
+                        _img.image= [UIImage imageNamed:@"ic_button_circle_photo_add"];
                     }
                 }
-                //如果服务器返回的数据中 ,图片为空,使用默认图片if 默认是  FALSE
-                
                 
                 
                 
@@ -288,7 +283,7 @@
             switch (indexPath.row) {
                 case 0:  {
                     [self alterHeadPortrait:nil];
-                    _tagPhoto = @"2";
+                    _tagPhoto = @"1";
                 }
                     break;
                     
@@ -327,7 +322,7 @@
                             
                         case 1:  {
                              [self alterHeadPortrait:nil];
-                            _tagPhoto = @"1";
+                            _tagPhoto = @"2";
                             
                         }
                             break;
