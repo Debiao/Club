@@ -67,6 +67,18 @@
         failure(error);
     }];
 }
+//修改昵称
++ (void)performaMyInfoModnickname:(NSString *)modnickname Success:(SucessBlock)success
+                          failure:(FailedBlock)failure{
+    NSDictionary *dic = @{
+                          @"value":modnickname
+                          };
+    [PX_TC_SC_HttpTool postWithPath:NEWCLUBSURL(MODNICKNAME)  params:dic success:^(id json) {
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 //历史回复
 + (void)performaTopicHistoryType:(NSInteger)type Page:(NSInteger)page Success:(SucessBlock)success
                          failure:(FailedBlock)failure{

@@ -27,13 +27,15 @@
 @end
 
 @implementation PX_MC_BM_MyInfoViewController
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self PxHandleData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"个人信息";
     [self myInfoTableView];
-    
-    [self PxHandleData];
     // Do any additional setup after loading the view.
 }
 
@@ -54,9 +56,10 @@
         }
         
         if ([model.data.nickname isEqualToString:@""]) {
-            self.isModify = NO;
-        }else{
             self.isModify = YES;
+        }else{
+            self.trans_name = model.data.nickname;
+            self.isModify = NO;
         }
         
         self.strBirthday = [model.data.birthday substringToIndex:10];
@@ -473,25 +476,42 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
    
-    if (self.isModify) {
-        [self.view makeToast:@"昵称不可以修改"];
-         return NO;
-    } else {
-         return YES;
+    if (textField.tag == 101) {
+        if (self.isModify) {
+          
+        } else {
+            [self.view makeToast:@"昵称不可以修改"];
+            return NO;
+        }
     }
+
+          return YES;
     
 }
 //键盘确定搜索的点击事件
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
-    NSLog(@"点击搜索的逻辑");
+   
+    if (textField.tag == 101) {
+        //昵称
+        [PX_MC_BM_TM_MyInfoHandle performaMyInfoModnickname:_trans_name Success:^(id obj) {
+            [self.myInfoTableView reloadData];
+        } failure:^(id obj) {
+            
+        }];
+        
+    } else {
+        //签名
+        [PX_MC_BM_TM_MyInfoHandle performaMyInfoMood:_trans_qianming Success:^(id obj) {
+            [self.myInfoTableView reloadData];
+        } failure:^(id obj) {
+            
+        }];
+        
+    }
     
-    [PX_MC_BM_TM_MyInfoHandle performaMyInfoMood:_trans_qianming Success:^(id obj) {
-        
-    } failure:^(id obj) {
-        
-    }];
-    return YES;
+   return YES;
+   
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     NSLog(@"完成编辑改变视图样式");

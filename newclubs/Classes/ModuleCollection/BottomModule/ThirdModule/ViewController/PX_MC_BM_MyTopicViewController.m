@@ -37,6 +37,7 @@
             [self performSelector:@selector(delayMethodHideToastActivity) withObject:nil afterDelay:0.5];
         } failure:^(id obj) {
             [self.view makeToast:@"请求出错"];
+            NSLog(@"棒槌%@",obj); 
         }];
         
     }else{
