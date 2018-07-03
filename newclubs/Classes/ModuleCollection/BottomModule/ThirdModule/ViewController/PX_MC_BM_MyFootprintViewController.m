@@ -40,16 +40,7 @@
     self.pageNo = 1;
     [self PxHandleDataPage:self.pageNo];
 }
-//
-//#pragma mark --Drop-downRefreshData
-//-(void)makeTheTabDown:(id)sender{
-//    self.pageNo = 1;
-//    self.hasMore = NO;
-//    [self PxHandleDataPage:self.pageNo];
-//    [self.RecommendTableView.mj_header endRefreshing];
-//    [self.RecommendTableView.mj_footer resetNoMoreData];
-//    
-//}
+
 
 #pragma mark --Drop-upLoadData
 -(void)makeTheTabUp:(id)sender{

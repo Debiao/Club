@@ -29,5 +29,9 @@
 + (void)performaTopicHistoryType:(NSInteger)type Page:(NSInteger)page Success:(SucessBlock)success
                       failure:(FailedBlock)failure;
 
+//获取上传图片的信息
++ (void)performaInfoSStokenDatatype:(NSInteger)datatype Success:(SucessBlock)success
+                         failure:(FailedBlock)failure;
+
 
 @end

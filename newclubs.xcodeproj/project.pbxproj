@@ -54,6 +54,20 @@
 		6B70DFC720C51353001B7595 /* PX_MC_BM_RecommendHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B70DFC620C51353001B7595 /* PX_MC_BM_RecommendHandle.m */; };
 		6B969E4D20DB546200735166 /* PX_TC_CG_LeftPicRightTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B969E4C20DB546200735166 /* PX_TC_CG_LeftPicRightTextButton.m */; };
 		6B9EAD6520CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9EAD6420CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m */; };
+		DC2D255520EB4EF4007395F2 /* UpYunBlockUpLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D253620EB4EF4007395F2 /* UpYunBlockUpLoader.m */; };
+		DC2D255620EB4EF4007395F2 /* UpYunFileDealManger.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D253820EB4EF4007395F2 /* UpYunFileDealManger.m */; };
+		DC2D255720EB4EF4007395F2 /* UpYunFormUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D253A20EB4EF4007395F2 /* UpYunFormUploader.m */; };
+		DC2D255820EB4EF4007395F2 /* UpApiUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D253E20EB4EF4007395F2 /* UpApiUtils.m */; };
+		DC2D255920EB4EF4007395F2 /* UpSimpleHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D254020EB4EF4007395F2 /* UpSimpleHttpClient.m */; };
+		DC2D255A20EB4EF4007395F2 /* UPHTTPBodyPart.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D254420EB4EF4007395F2 /* UPHTTPBodyPart.m */; };
+		DC2D255B20EB4EF4007395F2 /* UPHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D254620EB4EF4007395F2 /* UPHTTPClient.m */; };
+		DC2D255C20EB4EF4007395F2 /* UPMultipartBody.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D254820EB4EF4007395F2 /* UPMultipartBody.m */; };
+		DC2D255D20EB4EF4007395F2 /* NSData+MD5Digest.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D254B20EB4EF4007395F2 /* NSData+MD5Digest.m */; };
+		DC2D255E20EB4EF4007395F2 /* NSString+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D254D20EB4EF4007395F2 /* NSString+NSHash.m */; };
+		DC2D255F20EB4EF4007395F2 /* UPMutUploaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D255020EB4EF4007395F2 /* UPMutUploaderManager.m */; };
+		DC2D256020EB4EF4007395F2 /* UpYun.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D255220EB4EF4007395F2 /* UpYun.m */; };
+		DC2D256120EB4EF4007395F2 /* UPYUNConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D255420EB4EF4007395F2 /* UPYUNConfig.m */; };
+		DC2D256720EB67EC007395F2 /* PX_MC_BM_MyInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D256620EB67EC007395F2 /* PX_MC_BM_MyInfoModel.m */; };
 		DC646CA120E334C000328F20 /* HSChooseWhetherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA020E334C000328F20 /* HSChooseWhetherVC.m */; };
 		DC646CA420E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA320E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m */; };
 		DC646CA720E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA620E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m */; };
@@ -195,6 +209,35 @@
 		6B9EAD6420CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_TC_CG_TopPicDownTextButton.m; sourceTree = "<group>"; };
 		841067772A47D916D8C19CCE /* libPods-newclubs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newclubs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8338B36485BC89ACD43A7FD /* Pods-newclubs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newclubs.release.xcconfig"; path = "Pods/Target Support Files/Pods-newclubs/Pods-newclubs.release.xcconfig"; sourceTree = "<group>"; };
+		DC2D253520EB4EF4007395F2 /* UpYunBlockUpLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpYunBlockUpLoader.h; sourceTree = "<group>"; };
+		DC2D253620EB4EF4007395F2 /* UpYunBlockUpLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpYunBlockUpLoader.m; sourceTree = "<group>"; };
+		DC2D253720EB4EF4007395F2 /* UpYunFileDealManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpYunFileDealManger.h; sourceTree = "<group>"; };
+		DC2D253820EB4EF4007395F2 /* UpYunFileDealManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpYunFileDealManger.m; sourceTree = "<group>"; };
+		DC2D253920EB4EF4007395F2 /* UpYunFormUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpYunFormUploader.h; sourceTree = "<group>"; };
+		DC2D253A20EB4EF4007395F2 /* UpYunFormUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpYunFormUploader.m; sourceTree = "<group>"; };
+		DC2D253B20EB4EF4007395F2 /* UpYunUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpYunUploader.h; sourceTree = "<group>"; };
+		DC2D253D20EB4EF4007395F2 /* UpApiUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpApiUtils.h; sourceTree = "<group>"; };
+		DC2D253E20EB4EF4007395F2 /* UpApiUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpApiUtils.m; sourceTree = "<group>"; };
+		DC2D253F20EB4EF4007395F2 /* UpSimpleHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpSimpleHttpClient.h; sourceTree = "<group>"; };
+		DC2D254020EB4EF4007395F2 /* UpSimpleHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpSimpleHttpClient.m; sourceTree = "<group>"; };
+		DC2D254320EB4EF4007395F2 /* UPHTTPBodyPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPHTTPBodyPart.h; sourceTree = "<group>"; };
+		DC2D254420EB4EF4007395F2 /* UPHTTPBodyPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPHTTPBodyPart.m; sourceTree = "<group>"; };
+		DC2D254520EB4EF4007395F2 /* UPHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPHTTPClient.h; sourceTree = "<group>"; };
+		DC2D254620EB4EF4007395F2 /* UPHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPHTTPClient.m; sourceTree = "<group>"; };
+		DC2D254720EB4EF4007395F2 /* UPMultipartBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMultipartBody.h; sourceTree = "<group>"; };
+		DC2D254820EB4EF4007395F2 /* UPMultipartBody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPMultipartBody.m; sourceTree = "<group>"; };
+		DC2D254A20EB4EF4007395F2 /* NSData+MD5Digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5Digest.h"; sourceTree = "<group>"; };
+		DC2D254B20EB4EF4007395F2 /* NSData+MD5Digest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5Digest.m"; sourceTree = "<group>"; };
+		DC2D254C20EB4EF4007395F2 /* NSString+NSHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSHash.h"; sourceTree = "<group>"; };
+		DC2D254D20EB4EF4007395F2 /* NSString+NSHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSHash.m"; sourceTree = "<group>"; };
+		DC2D254F20EB4EF4007395F2 /* UPMutUploaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPMutUploaderManager.h; sourceTree = "<group>"; };
+		DC2D255020EB4EF4007395F2 /* UPMutUploaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPMutUploaderManager.m; sourceTree = "<group>"; };
+		DC2D255120EB4EF4007395F2 /* UpYun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpYun.h; sourceTree = "<group>"; };
+		DC2D255220EB4EF4007395F2 /* UpYun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpYun.m; sourceTree = "<group>"; };
+		DC2D255320EB4EF4007395F2 /* UPYUNConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPYUNConfig.h; sourceTree = "<group>"; };
+		DC2D255420EB4EF4007395F2 /* UPYUNConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPYUNConfig.m; sourceTree = "<group>"; };
+		DC2D256520EB67EC007395F2 /* PX_MC_BM_MyInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_MyInfoModel.h; sourceTree = "<group>"; };
+		DC2D256620EB67EC007395F2 /* PX_MC_BM_MyInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_MyInfoModel.m; sourceTree = "<group>"; };
 		DC646C9F20E334C000328F20 /* HSChooseWhetherVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSChooseWhetherVC.h; sourceTree = "<group>"; };
 		DC646CA020E334C000328F20 /* HSChooseWhetherVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSChooseWhetherVC.m; sourceTree = "<group>"; };
 		DC646CA220E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_TM_MyInfoHandle.h; sourceTree = "<group>"; };
@@ -319,6 +362,97 @@
 			path = HSPickerView;
 			sourceTree = "<group>";
 		};
+		DC2D253220EB4EF4007395F2 /* UpYunSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DC2D253320EB4EF4007395F2 /* class */,
+				DC2D254120EB4EF4007395F2 /* class_deprecated */,
+			);
+			name = UpYunSDK;
+			path = "../../../../Downloads/ios-sdk-master/UpYunSDK";
+			sourceTree = "<group>";
+		};
+		DC2D253320EB4EF4007395F2 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				DC2D253420EB4EF4007395F2 /* UpLoader */,
+				DC2D253C20EB4EF4007395F2 /* Utils */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		DC2D253420EB4EF4007395F2 /* UpLoader */ = {
+			isa = PBXGroup;
+			children = (
+				DC2D253520EB4EF4007395F2 /* UpYunBlockUpLoader.h */,
+				DC2D253620EB4EF4007395F2 /* UpYunBlockUpLoader.m */,
+				DC2D253720EB4EF4007395F2 /* UpYunFileDealManger.h */,
+				DC2D253820EB4EF4007395F2 /* UpYunFileDealManger.m */,
+				DC2D253920EB4EF4007395F2 /* UpYunFormUploader.h */,
+				DC2D253A20EB4EF4007395F2 /* UpYunFormUploader.m */,
+				DC2D253B20EB4EF4007395F2 /* UpYunUploader.h */,
+			);
+			path = UpLoader;
+			sourceTree = "<group>";
+		};
+		DC2D253C20EB4EF4007395F2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DC2D253D20EB4EF4007395F2 /* UpApiUtils.h */,
+				DC2D253E20EB4EF4007395F2 /* UpApiUtils.m */,
+				DC2D253F20EB4EF4007395F2 /* UpSimpleHttpClient.h */,
+				DC2D254020EB4EF4007395F2 /* UpSimpleHttpClient.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DC2D254120EB4EF4007395F2 /* class_deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				DC2D254220EB4EF4007395F2 /* HttpUtils */,
+				DC2D254920EB4EF4007395F2 /* NSData+MD5Digest */,
+				DC2D254E20EB4EF4007395F2 /* UPMutUpload */,
+				DC2D255120EB4EF4007395F2 /* UpYun.h */,
+				DC2D255220EB4EF4007395F2 /* UpYun.m */,
+				DC2D255320EB4EF4007395F2 /* UPYUNConfig.h */,
+				DC2D255420EB4EF4007395F2 /* UPYUNConfig.m */,
+			);
+			path = class_deprecated;
+			sourceTree = "<group>";
+		};
+		DC2D254220EB4EF4007395F2 /* HttpUtils */ = {
+			isa = PBXGroup;
+			children = (
+				DC2D254320EB4EF4007395F2 /* UPHTTPBodyPart.h */,
+				DC2D254420EB4EF4007395F2 /* UPHTTPBodyPart.m */,
+				DC2D254520EB4EF4007395F2 /* UPHTTPClient.h */,
+				DC2D254620EB4EF4007395F2 /* UPHTTPClient.m */,
+				DC2D254720EB4EF4007395F2 /* UPMultipartBody.h */,
+				DC2D254820EB4EF4007395F2 /* UPMultipartBody.m */,
+			);
+			path = HttpUtils;
+			sourceTree = "<group>";
+		};
+		DC2D254920EB4EF4007395F2 /* NSData+MD5Digest */ = {
+			isa = PBXGroup;
+			children = (
+				DC2D254A20EB4EF4007395F2 /* NSData+MD5Digest.h */,
+				DC2D254B20EB4EF4007395F2 /* NSData+MD5Digest.m */,
+				DC2D254C20EB4EF4007395F2 /* NSString+NSHash.h */,
+				DC2D254D20EB4EF4007395F2 /* NSString+NSHash.m */,
+			);
+			path = "NSData+MD5Digest";
+			sourceTree = "<group>";
+		};
+		DC2D254E20EB4EF4007395F2 /* UPMutUpload */ = {
+			isa = PBXGroup;
+			children = (
+				DC2D254F20EB4EF4007395F2 /* UPMutUploaderManager.h */,
+				DC2D255020EB4EF4007395F2 /* UPMutUploaderManager.m */,
+			);
+			path = UPMutUpload;
+			sourceTree = "<group>";
+		};
 		DCC6BC7320B26CCE00BDC6C4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -365,6 +499,7 @@
 		DCC6BC7F20B26CCE00BDC6C4 /* LibraryClass */ = {
 			isa = PBXGroup;
 			children = (
+				DC2D253220EB4EF4007395F2 /* UpYunSDK */,
 				6B25AFDE20DCFECE00114739 /* HSPickerView */,
 			);
 			path = LibraryClass;
@@ -539,6 +674,8 @@
 				DC646CB220E60C4800328F20 /* PX_MC_BM_MyTopicDetailModel.m */,
 				DC646CB720E60DA700328F20 /* PX_MC_BM_MyTopicAttributeModel.h */,
 				DC646CB820E60DA700328F20 /* PX_MC_BM_MyTopicAttributeModel.m */,
+				DC2D256520EB67EC007395F2 /* PX_MC_BM_MyInfoModel.h */,
+				DC2D256620EB67EC007395F2 /* PX_MC_BM_MyInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1101,6 +1238,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B27D18220D1153C00B2B59E /* PX_MC_BM_CircleFamilySettingDetailModel.m in Sources */,
+				DC2D255C20EB4EF4007395F2 /* UPMultipartBody.m in Sources */,
+				DC2D255620EB4EF4007395F2 /* UpYunFileDealManger.m in Sources */,
 				6B969E4D20DB546200735166 /* PX_TC_CG_LeftPicRightTextButton.m in Sources */,
 				6B1F12BE20C783F000793E30 /* PX_MC_BM_RecommendAttributeModel.m in Sources */,
 				DC646CB020E60B7F00328F20 /* PX_MC_BM_MyTopicBaseModel.m in Sources */,
@@ -1122,15 +1261,18 @@
 				6B27D18520D1172900B2B59E /* PX_MC_BM_CirclePermissionsDetailModel.m in Sources */,
 				6B2CAAF920BFE8C400984A46 /* PX_UM_LoginHandle.m in Sources */,
 				6B48B9C220BBAD4900CA59C9 /* PX_UM_LoginView.m in Sources */,
+				DC2D256720EB67EC007395F2 /* PX_MC_BM_MyInfoModel.m in Sources */,
 				6B2CAAFC20BFE90300984A46 /* PX_UM_LoginModel.m in Sources */,
 				6B27D16D20D1006000B2B59E /* PX_MC_BM_CircleHandle.m in Sources */,
 				DC646CAA20E4C37E00328F20 /* PX_MC_BM_MyDetailInfoModel.m in Sources */,
 				6B37532B20DA3BE6003289FF /* UILablePadding.m in Sources */,
 				6B25AFF020DCFECF00114739 /* HSGenderPickerVC.m in Sources */,
+				DC2D255720EB4EF4007395F2 /* UpYunFormUploader.m in Sources */,
 				6B2CAAF320BFD10D00984A46 /* PX_UM_RegisteredHandle.m in Sources */,
 				6B68F30820D9012D00995AA3 /* PX_MC_BM_CreateCircleViewController.m in Sources */,
 				DCC6BCBD20B26FDF00BDC6C4 /* PX_BC_Handle.m in Sources */,
 				6B48B9C820BCE50500CA59C9 /* PX_UM_RegisteredViewController.m in Sources */,
+				DC2D256120EB4EF4007395F2 /* UPYUNConfig.m in Sources */,
 				6B37532520DA2CB9003289FF /* PX_MC_BM_CreateCirclePermissionsViewController.m in Sources */,
 				6B27D16720D0FF3400B2B59E /* PX_MC_BM_CircleTextCell.m in Sources */,
 				6B48B9CB20BCF08A00CA59C9 /* PX_UM_RegisteredView.m in Sources */,
@@ -1141,6 +1283,7 @@
 				6B25AFD420DCD11700114739 /* PX_MC_BM_MyFootprintViewController.m in Sources */,
 				DC6BFEA320B3BADD007A1427 /* PX_MC_BM_MyViewController.m in Sources */,
 				6B25AFEF20DCFECF00114739 /* NSDate+Date.m in Sources */,
+				DC2D255820EB4EF4007395F2 /* UpApiUtils.m in Sources */,
 				DCA816ED20B669C4009714D8 /* UIBarButtonItem+PXBarButtonItem.m in Sources */,
 				DC646CAD20E6088800328F20 /* PX_MC_BM_MyTopicTableViewCell.m in Sources */,
 				6B37532220D9FFA7003289FF /* UITextView+ZWLimitCounter.m in Sources */,
@@ -1151,19 +1294,27 @@
 				6B27D17F20D1133100B2B59E /* PX_MC_BM_CircleMemberDetailModel.m in Sources */,
 				6B37533420DA4ECD003289FF /* PX_MC_BM_MySettingViewController.m in Sources */,
 				6B1F12BB20C7832A00793E30 /* PX_MC_BM_RecommendBaseModel.m in Sources */,
+				DC2D255F20EB4EF4007395F2 /* UPMutUploaderManager.m in Sources */,
 				6B2CAAF620BFD51100984A46 /* PX_UM_RegisteredModel.m in Sources */,
 				6B37531F20D9FC38003289FF /* UITextView+ZWPlaceHolder.m in Sources */,
 				DC646CA120E334C000328F20 /* HSChooseWhetherVC.m in Sources */,
+				DC2D255920EB4EF4007395F2 /* UpSimpleHttpClient.m in Sources */,
 				6B267F8120CA21C700B2E2D7 /* PX_MC_BM_RecommendTextImgCell.m in Sources */,
+				DC2D255E20EB4EF4007395F2 /* NSString+NSHash.m in Sources */,
 				DC646CA420E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m in Sources */,
 				6B25AFDD20DCE42100114739 /* PX_MC_BM_MyInfoViewController.m in Sources */,
+				DC2D255D20EB4EF4007395F2 /* NSData+MD5Digest.m in Sources */,
 				DCC6BCC620B2750600BDC6C4 /* PX_BC_NavigationViewController.m in Sources */,
 				6B2CAAFF20C101FB00984A46 /* PX_UM_RegisteredWebViewController.m in Sources */,
 				6B25AFD720DCD92800114739 /* PX_MC_BM_MyIntegralViewController.m in Sources */,
 				6B27D17020D10EDA00B2B59E /* PX_MC_BM_CircleBaseModel.m in Sources */,
+				DC2D256020EB4EF4007395F2 /* UpYun.m in Sources */,
 				DC646CB620E60CD000328F20 /* PX_MC_BM_MyTopicModel.m in Sources */,
 				DC646CB920E60DA700328F20 /* PX_MC_BM_MyTopicAttributeModel.m in Sources */,
+				DC2D255520EB4EF4007395F2 /* UpYunBlockUpLoader.m in Sources */,
 				6B9EAD6520CE0F31008794CD /* PX_TC_CG_TopPicDownTextButton.m in Sources */,
+				DC2D255A20EB4EF4007395F2 /* UPHTTPBodyPart.m in Sources */,
+				DC2D255B20EB4EF4007395F2 /* UPHTTPClient.m in Sources */,
 				6B27D17320D10FC900B2B59E /* PX_MC_BM_CircleArrayDetailInfoModel.m in Sources */,
 				DCC6BCC020B2705A00BDC6C4 /* PX_BC_ViewController.m in Sources */,
 			);

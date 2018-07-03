@@ -12,6 +12,9 @@
 #import "PX_MC_BM_TM_MyInfoHandle.h"
 #import "PX_MC_BM_MyInfoBaseModel.h"
 #import "PX_MC_BM_MyDetailInfoModel.h"
+#import "UpYunFormUploader.h"
+
+#import "PX_MC_BM_MyInfoModel.h"
 
 @interface PX_MC_BM_MyInfoViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,HSDatePickerVCDelegate,UITextFieldDelegate,HSGenderPickerVCDelegate>
 @property (nonatomic, strong) UITableView *myInfoTableView;
@@ -21,6 +24,8 @@
 @property (nonatomic, strong) UIImage *pxPhoto;
 @property (nonatomic, strong) NSString *strPhoto;
 @property (nonatomic, strong) NSString *strBackgroundPic;
+
+
 @property (nonatomic, assign) BOOL isModify;
 
 @property (nonatomic, strong) UITextField *tfText;
@@ -37,7 +42,59 @@
     self.title = @"个人信息";
     [self myInfoTableView];
     // Do any additional setup after loading the view.
+    
 }
+
+- (void)upImage{
+    
+    [PX_MC_BM_TM_MyInfoHandle performaInfoSStokenDatatype:1 Success:^(id obj) {
+        PX_MC_BM_MyInfoModel *model = obj;
+    
+        NSLog(@"棒槌%@",model.policy);
+        NSLog(@"棒槌%@",model.token);
+         NSString * subString2 = [model.token substringFromIndex:11];
+        NSLog(@"棒槌%@",subString2);
+
+        NSData *fileData = UIImagePNGRepresentation(self.pxPhoto);
+        UpYunFormUploader *up = [[UpYunFormUploader alloc] init];
+        
+        NSString *operatorName = @"club";
+        [up uploadWithOperator:operatorName
+                        policy:model.policy
+                     signature:subString2
+                      fileData:fileData
+                      fileName:nil
+                       success:^(NSHTTPURLResponse *response,
+                                 NSDictionary *responseBody) {
+                           NSLog(@"上传成功 responseBody：%@", responseBody);
+                           //主线程刷新ui
+                       }
+         
+                       failure:^(NSError *error,
+                                 NSHTTPURLResponse *response,
+                                 NSDictionary *responseBody) {
+                           NSLog(@"上传失败 error：%@", error);
+                           NSLog(@"上传失败 code=%ld, responseHeader：%@", (long)response.statusCode, response.allHeaderFields);
+                           NSLog(@"上传失败 message：%@", responseBody);
+                           //主线程刷新ui
+                       }
+         
+                      progress:^(int64_t completedBytesCount,
+                                 int64_t totalBytesCount) {
+                          NSLog(@"upload progress: %lld / %lld", completedBytesCount, totalBytesCount);
+                          //主线程刷新ui
+                      }];
+        
+        
+    } failure:^(id obj) {
+        
+    }];
+    
+    
+  
+    
+}
+
 
 - (void)PxHandleData{
     [PX_MC_BM_TM_MyInfoHandle performaMyInfnSuccess:^(id obj) {
@@ -410,6 +467,8 @@
     //定义一个newPhoto，用来存放我们选择的图片。
     _pxPhoto = [info objectForKey:@"UIImagePickerControllerEditedImage"];
     //_intState = _img.image.scale;
+    [self upImage];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     [self.myInfoTableView reloadData];
 }

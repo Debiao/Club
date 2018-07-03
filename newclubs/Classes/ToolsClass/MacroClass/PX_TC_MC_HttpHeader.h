@@ -47,4 +47,10 @@
 //?? 历史回复
 #define HISTORYLIST @"/api/user/historylist"
 
+
+//上传头像获得token
+#define SSTOKNE @"/api/other/sstoken"
+
+
+
 #endif /* PX_TC_MC_HttpHeader_h */

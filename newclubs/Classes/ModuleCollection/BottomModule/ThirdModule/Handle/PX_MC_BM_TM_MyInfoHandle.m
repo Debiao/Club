@@ -9,6 +9,7 @@
 #import "PX_MC_BM_TM_MyInfoHandle.h"
 #import "PX_MC_BM_MyInfoBaseModel.h"
 #import "PX_MC_BM_MyTopicBaseModel.h"
+#import "PX_MC_BM_MyInfoModel.h"
 
 @implementation PX_MC_BM_TM_MyInfoHandle
 
@@ -89,6 +90,22 @@
     
     [PX_TC_SC_HttpTool postWithPath:NEWCLUBSURL(HISTORYLIST)  params:dic success:^(id json) {
         PX_MC_BM_MyTopicBaseModel *data = [PX_MC_BM_MyTopicBaseModel mj_objectWithKeyValues:json];
+        success(data);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+
+//获取上传图片的信息
++ (void)performaInfoSStokenDatatype:(NSInteger)datatype Success:(SucessBlock)success
+                            failure:(FailedBlock)failure{
+    NSDictionary *dic = @{
+                          @"datatype":@(datatype)
+                          };
+    
+    [PX_TC_SC_HttpTool postWithPath:NEWCLUBSURL(SSTOKNE)  params:dic success:^(id json) {
+        PX_MC_BM_MyInfoModel *data = [PX_MC_BM_MyInfoModel mj_objectWithKeyValues:json];
         success(data);
     } failure:^(NSError *error) {
         failure(error);
