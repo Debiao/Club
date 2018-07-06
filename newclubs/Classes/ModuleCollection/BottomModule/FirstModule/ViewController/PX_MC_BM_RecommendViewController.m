@@ -15,6 +15,7 @@
 #import "PX_MC_BM_RecommendTextCell.h"
 #import "PX_MC_BM_RecommendTextImgCell.h"
 
+#import "PX_MC_BM_RecommendSeSecondViewController.h"
 
 
 @interface PX_MC_BM_RecommendViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -23,7 +24,6 @@
 @property (nonatomic,strong) NSMutableArray *dataListArray;
 @property (nonatomic,assign) NSInteger pageNo;
 @property (nonatomic,assign) BOOL hasMore;
-
 
 @end
 
@@ -69,6 +69,8 @@
 //            if (model.data.count == 0) {
 //                self.hasMore = YES;
 //            }
+          
+            
             if (model.data.count < 5) {
                 self.hasMore = YES;
             }
@@ -139,6 +141,14 @@
 
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    PX_MC_BM_RecommendArrayDetailInfoModel * model = self.dataListArray[indexPath.item];
+    PX_MC_BM_RecommendSeSecondViewController *pushSecondVc = [[PX_MC_BM_RecommendSeSecondViewController alloc]init];
+    pushSecondVc.id_str = model.id_str;
+    [self.navigationController pushViewController:pushSecondVc animated:YES];
+    
+    
+}
 
 #pragma mark --Lazy
 - (NSMutableArray *)dataListArray{

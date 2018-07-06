@@ -96,6 +96,9 @@
                         weak_self.model = obj;
                         if (weak_self.model.state == 1) {
                             [PX_UserDefaults removeObjectForKey:@"token"];
+//                            [PX_UserDefaults synchronize];
+                            
+                            [PX_UserDefaults setObject:weak_self.model.token forKey:@"token"];
                             [PX_UserDefaults synchronize];
                             [weak_self performSelector:@selector(delayMethod) withObject:nil afterDelay:2.0];
                         }else{
@@ -116,8 +119,7 @@
 
 
 - (void)delayMethod{
-    [PX_UserDefaults setObject:self.model.token forKey:@"token"];
-    [PX_UserDefaults synchronize];
+  
     [self.view hideToastActivity];
     [self.view makeToast:@"登录成功"];
     isLogin = YES;

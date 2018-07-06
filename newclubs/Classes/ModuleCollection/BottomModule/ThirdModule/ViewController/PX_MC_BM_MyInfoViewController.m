@@ -25,22 +25,19 @@
 @property (nonatomic, strong) NSString *strPhoto;
 @property (nonatomic, strong) NSString *strBackgroundPic;
 
-
 @property (nonatomic, assign) BOOL isModify;
 
 @property (nonatomic, strong) UITextField *tfText;
 @end
 
 @implementation PX_MC_BM_MyInfoViewController
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self PxHandleData];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"个人信息";
     [self myInfoTableView];
+    
+     [self PxHandleData];
     // Do any additional setup after loading the view.
     
 }
@@ -50,19 +47,21 @@
     [PX_MC_BM_TM_MyInfoHandle performaInfoSStokenDatatype:1 Success:^(id obj) {
         PX_MC_BM_MyInfoModel *model = obj;
     
-        NSLog(@"棒槌%@",model.policy);
-        NSLog(@"棒槌%@",model.token);
+        NSLog(@"棒槌policy%@",model.policy);
+        NSLog(@"棒槌token%@",model.token);
+        
          NSString * subString2 = [model.token substringFromIndex:11];
-        NSLog(@"棒槌%@",subString2);
-
-        NSData *fileData = UIImagePNGRepresentation(self.pxPhoto);
+        NSLog(@"棒槌token%@",subString2);
+      
+       // NSData *fileData = UIImagePNGRepresentation(self.pxPhoto);
+        
         UpYunFormUploader *up = [[UpYunFormUploader alloc] init];
         
         NSString *operatorName = @"club";
         [up uploadWithOperator:operatorName
                         policy:model.policy
                      signature:subString2
-                      fileData:fileData
+                      fileData:[self compressWithMaxLength:1024000]
                       fileName:nil
                        success:^(NSHTTPURLResponse *response,
                                  NSDictionary *responseBody) {
@@ -90,9 +89,50 @@
         
     }];
     
+}
+
+-(NSData *)compressWithMaxLength:(NSUInteger)maxLength{
+    // Compress by quality
+    CGFloat compression = 1;
+    NSData *data = UIImageJPEGRepresentation(self.pxPhoto, compression);
+    //NSLog(@"Before compressing quality, image size = %ld KB",data.length/1024);
+    if (data.length < maxLength) return data;
     
-  
-    
+    CGFloat max = 1;
+    CGFloat min = 0;
+    for (int i = 0; i < 6; ++i) {
+        compression = (max + min) / 2;
+        data = UIImageJPEGRepresentation(self.pxPhoto, compression);
+        //NSLog(@"Compression = %.1f", compression);
+        //NSLog(@"In compressing quality loop, image size = %ld KB", data.length / 1024);
+        if (data.length < maxLength * 0.9) {
+            min = compression;
+        } else if (data.length > maxLength) {
+            max = compression;
+        } else {
+            break;
+        }
+    }
+    //NSLog(@"After compressing quality, image size = %ld KB", data.length / 1024);
+    if (data.length < maxLength) return data;
+    UIImage *resultImage = [UIImage imageWithData:data];
+    // Compress by size
+    NSUInteger lastDataLength = 0;
+    while (data.length > maxLength && data.length != lastDataLength) {
+        lastDataLength = data.length;
+        CGFloat ratio = (CGFloat)maxLength / data.length;
+        //NSLog(@"Ratio = %.1f", ratio);
+        CGSize size = CGSizeMake((NSUInteger)(resultImage.size.width * sqrtf(ratio)),
+                                 (NSUInteger)(resultImage.size.height * sqrtf(ratio))); // Use NSUInteger to prevent white blank
+        UIGraphicsBeginImageContext(size);
+        [resultImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+        resultImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        data = UIImageJPEGRepresentation(resultImage, compression);
+        //NSLog(@"In compressing size loop, image size = %ld KB", data.length / 1024);
+    }
+    //NSLog(@"After compressing size loop, image size = %ld KB", data.length / 1024);
+    return data;
 }
 
 
