@@ -47,10 +47,11 @@
 //?? 历史回复
 #define HISTORYLIST @"/api/user/historylist"
 
-
 //上传头像获得token
 #define SSTOKNE @"/api/other/sstoken"
 
+//话题详情列表
+#define REPLYINDEX @"/api/reply/index"
 
 
 #endif /* PX_TC_MC_HttpHeader_h */

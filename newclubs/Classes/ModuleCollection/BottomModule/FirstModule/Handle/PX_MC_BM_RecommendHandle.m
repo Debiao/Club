@@ -8,6 +8,7 @@
 
 #import "PX_MC_BM_RecommendHandle.h"
 #import "PX_MC_BM_RecommendBaseModel.h"
+#import "PX_MC_BM_RecommendSecondBaseModel.h"
 
 @implementation PX_MC_BM_RecommendHandle
 
@@ -33,5 +34,22 @@
 
 }
 
+//话题详情列表
++ (void)performaRecommendSecondTid:(NSString *)tid Page:(NSInteger)page Success:(SucessBlock)success
+                           failure:(FailedBlock)failure{
+    NSDictionary *dic = @{
+                          @"tid":tid,
+                          @"page":@(page)
+                          };
+    
+    [PX_TC_SC_HttpTool getWithPath:NEWCLUBSURL(REPLYINDEX) params:dic success:^(id json) {
+        
+        PX_MC_BM_RecommendSecondBaseModel *data = [PX_MC_BM_RecommendSecondBaseModel mj_objectWithKeyValues:json];
+        success(data);
+        
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
 
 @end

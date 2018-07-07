@@ -73,6 +73,9 @@
 		DC5E071320EF5D330011606C /* UPMutUploaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E070420EF5D330011606C /* UPMutUploaderManager.m */; };
 		DC5E071420EF5D330011606C /* UpYun.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E070620EF5D330011606C /* UpYun.m */; };
 		DC5E071520EF5D330011606C /* UPYUNConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E070820EF5D330011606C /* UPYUNConfig.m */; };
+		DC5E071820F051900011606C /* PX_MC_BM_RecommendSecondTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E071720F051900011606C /* PX_MC_BM_RecommendSecondTextCell.m */; };
+		DC5E071B20F0922B0011606C /* PX_MC_BM_RecommendSecondZeroTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E071A20F0922B0011606C /* PX_MC_BM_RecommendSecondZeroTextCell.m */; };
+		DC5E071E20F092420011606C /* PX_MC_BM_RecommendSecondZeroTextImgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5E071D20F092420011606C /* PX_MC_BM_RecommendSecondZeroTextImgCell.m */; };
 		DC646CA120E334C000328F20 /* HSChooseWhetherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA020E334C000328F20 /* HSChooseWhetherVC.m */; };
 		DC646CA420E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA320E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.m */; };
 		DC646CA720E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DC646CA620E4C2FB00328F20 /* PX_MC_BM_MyInfoBaseModel.m */; };
@@ -253,6 +256,12 @@
 		DC5E070620EF5D330011606C /* UpYun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpYun.m; sourceTree = "<group>"; };
 		DC5E070720EF5D330011606C /* UPYUNConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPYUNConfig.h; sourceTree = "<group>"; };
 		DC5E070820EF5D330011606C /* UPYUNConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UPYUNConfig.m; sourceTree = "<group>"; };
+		DC5E071620F051900011606C /* PX_MC_BM_RecommendSecondTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_RecommendSecondTextCell.h; sourceTree = "<group>"; };
+		DC5E071720F051900011606C /* PX_MC_BM_RecommendSecondTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_RecommendSecondTextCell.m; sourceTree = "<group>"; };
+		DC5E071920F0922B0011606C /* PX_MC_BM_RecommendSecondZeroTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_RecommendSecondZeroTextCell.h; sourceTree = "<group>"; };
+		DC5E071A20F0922B0011606C /* PX_MC_BM_RecommendSecondZeroTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_RecommendSecondZeroTextCell.m; sourceTree = "<group>"; };
+		DC5E071C20F092420011606C /* PX_MC_BM_RecommendSecondZeroTextImgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_RecommendSecondZeroTextImgCell.h; sourceTree = "<group>"; };
+		DC5E071D20F092420011606C /* PX_MC_BM_RecommendSecondZeroTextImgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PX_MC_BM_RecommendSecondZeroTextImgCell.m; sourceTree = "<group>"; };
 		DC646C9F20E334C000328F20 /* HSChooseWhetherVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSChooseWhetherVC.h; sourceTree = "<group>"; };
 		DC646CA020E334C000328F20 /* HSChooseWhetherVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HSChooseWhetherVC.m; sourceTree = "<group>"; };
 		DC646CA220E4B88C00328F20 /* PX_MC_BM_TM_MyInfoHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PX_MC_BM_TM_MyInfoHandle.h; sourceTree = "<group>"; };
@@ -587,6 +596,12 @@
 				6B1F12CC20C7C3DD00793E30 /* PX_MC_BM_RecommendTextCell.m */,
 				6B267F7F20CA21C600B2E2D7 /* PX_MC_BM_RecommendTextImgCell.h */,
 				6B267F8020CA21C600B2E2D7 /* PX_MC_BM_RecommendTextImgCell.m */,
+				DC5E071620F051900011606C /* PX_MC_BM_RecommendSecondTextCell.h */,
+				DC5E071720F051900011606C /* PX_MC_BM_RecommendSecondTextCell.m */,
+				DC5E071920F0922B0011606C /* PX_MC_BM_RecommendSecondZeroTextCell.h */,
+				DC5E071A20F0922B0011606C /* PX_MC_BM_RecommendSecondZeroTextCell.m */,
+				DC5E071C20F092420011606C /* PX_MC_BM_RecommendSecondZeroTextImgCell.h */,
+				DC5E071D20F092420011606C /* PX_MC_BM_RecommendSecondZeroTextImgCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1269,6 +1284,7 @@
 				DC646CB020E60B7F00328F20 /* PX_MC_BM_MyTopicBaseModel.m in Sources */,
 				6B25AFD120DCD0E000114739 /* PX_MC_BM_MyFavoriteViewController.m in Sources */,
 				6B27D17C20D1130D00B2B59E /* PX_MC_BM_CircleFamilyDetailModel.m in Sources */,
+				DC5E071E20F092420011606C /* PX_MC_BM_RecommendSecondZeroTextImgCell.m in Sources */,
 				DCC6BCD120B2B23100BDC6C4 /* PX_TC_TB_TabBarView.m in Sources */,
 				DCC6BCB620B26CCE00BDC6C4 /* main.m in Sources */,
 				6B48B9CE20BD283700CA59C9 /* PX_TC_CG_LineTextField.m in Sources */,
@@ -1287,6 +1303,7 @@
 				6B27D18520D1172900B2B59E /* PX_MC_BM_CirclePermissionsDetailModel.m in Sources */,
 				6B2CAAF920BFE8C400984A46 /* PX_UM_LoginHandle.m in Sources */,
 				6B48B9C220BBAD4900CA59C9 /* PX_UM_LoginView.m in Sources */,
+				DC5E071820F051900011606C /* PX_MC_BM_RecommendSecondTextCell.m in Sources */,
 				DC2D256720EB67EC007395F2 /* PX_MC_BM_MyInfoModel.m in Sources */,
 				6B2CAAFC20BFE90300984A46 /* PX_UM_LoginModel.m in Sources */,
 				6B27D16D20D1006000B2B59E /* PX_MC_BM_CircleHandle.m in Sources */,
@@ -1301,6 +1318,7 @@
 				6B68F30820D9012D00995AA3 /* PX_MC_BM_CreateCircleViewController.m in Sources */,
 				DC5E070A20EF5D330011606C /* UpYunFileDealManger.m in Sources */,
 				DCC6BCBD20B26FDF00BDC6C4 /* PX_BC_Handle.m in Sources */,
+				DC5E071B20F0922B0011606C /* PX_MC_BM_RecommendSecondZeroTextCell.m in Sources */,
 				6B48B9C820BCE50500CA59C9 /* PX_UM_RegisteredViewController.m in Sources */,
 				DC5E063B20EF45F50011606C /* PX_MC_BM_RecommendSecondPermissionsReadModel.m in Sources */,
 				6B37532520DA2CB9003289FF /* PX_MC_BM_CreateCirclePermissionsViewController.m in Sources */,

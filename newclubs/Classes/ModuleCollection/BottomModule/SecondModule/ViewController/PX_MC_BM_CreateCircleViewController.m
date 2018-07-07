@@ -44,7 +44,7 @@
     [btnBack addTarget:self action:@selector(popView)forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem  *barLeft = [[UIBarButtonItem alloc]initWithCustomView:btnBack];
     self.navigationItem.leftBarButtonItem = barLeft;
-    // Do any additional setup after loading the view.
+     
 }
 -(void)popView{
      [self.navigationController popViewControllerAnimated:NO];
@@ -59,12 +59,12 @@
     self.tfTitle = [[UITextField alloc]init];
     self.tfTitle.placeholder = @"你的圈子名称(注:圈名是无法更改的)";
     self.tfTitle.borderStyle = UITextBorderStyleRoundedRect;
-    self.tfTitle.frame = CGRectMake(MarginSize, 200, SCREEN_WIDTH - MarginSize*2, 44);
+    self.tfTitle.frame = CGRectMake(MarginSize, 230, SCREEN_WIDTH - MarginSize*2, 44);
     [self.view addSubview:self.tfTitle];
     
     
     
-    CGRect rect = CGRectMake(MarginSize, 250, SCREEN_WIDTH - MarginSize*2, 100);
+    CGRect rect = CGRectMake(MarginSize, 280, SCREEN_WIDTH - MarginSize*2, 100);
     self.tfContent = [[UITextView alloc] initWithFrame:rect];
     self.tfContent.font = [UIFont systemFontOfSize:15.f];
     self.tfContent.layer.borderColor = HexColor(0xD2D2D2).CGColor;

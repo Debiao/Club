@@ -123,7 +123,6 @@
     self.labFamiltyname.text = model.familtyname;
     self.labCreattime.text = [self compareCurrentTime:[self htcTimeToLocationStr:model.creattime]];
     self.labVisitnum.text = [NSString stringWithFormat:@"%@ %@",model.visitnum,@"阅读"];
-    
     if (model.value.count>0) {
         for (int i = 0; i<model.value.count; i++) {
             NSString *urlstr = model.value[i];

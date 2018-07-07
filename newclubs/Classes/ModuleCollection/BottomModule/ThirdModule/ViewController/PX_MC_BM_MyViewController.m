@@ -23,12 +23,6 @@
 
 #import "PX_MC_BM_MyInfoViewController.h"
 
-
-#define ZhengWenColor   HexColor(0x595959)
-#define Color9   HexColor(0xB3B3B3)
-#define LineColor HexColor(0xe6e6e6)
-
-
 @interface PX_MC_BM_MyViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *myTableView;
 
@@ -49,6 +43,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"";
     [self drawView];
     [self myTableView];
@@ -331,7 +326,7 @@
         _myTableView.dataSource = self;
         _myTableView.rowHeight = 44;
         _myTableView.separatorColor = LineColor;
-        _myTableView.backgroundColor =LineColor ;
+        _myTableView.backgroundColor = LineColor ;
         // 解决方法三：添加以下代码关闭估算行高
         _myTableView.estimatedRowHeight = 0;
         _myTableView.estimatedSectionHeaderHeight = 0;

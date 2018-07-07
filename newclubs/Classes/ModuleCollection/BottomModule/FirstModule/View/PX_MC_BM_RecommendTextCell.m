@@ -115,7 +115,7 @@
     self.labCreattime.text = [self compareCurrentTime:[self htcTimeToLocationStr:model.creattime]];
     self.labVisitnum.text = [NSString stringWithFormat:@"%@ %@",model.visitnum,@"阅读"];
     
-    NSLog(@"棒槌%@",model.id_str);
+  
 
    
     

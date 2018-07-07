@@ -23,7 +23,7 @@
 
 -(void)creatUI{
     
-    //    self.backgroundColor = MAJORCOLOR;
+    self.backgroundColor = LineColor;
     
     self.cardBgView = [[UIView alloc]init];
     self.cardBgView.backgroundColor = PXWHITECOLOR ;

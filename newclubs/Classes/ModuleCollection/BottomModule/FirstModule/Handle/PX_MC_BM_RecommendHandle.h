@@ -12,4 +12,7 @@
 //查找话题列列表
 + (void)performaRecommendFamilyid:(NSString *)familyid Page:(NSInteger)page Limit:(NSInteger)limit Success:(SucessBlock)success
                   failure:(FailedBlock)failure;
+//话题详情列表
++ (void)performaRecommendSecondTid:(NSString *)tid Page:(NSInteger)page Success:(SucessBlock)success
+                          failure:(FailedBlock)failure;
 @end

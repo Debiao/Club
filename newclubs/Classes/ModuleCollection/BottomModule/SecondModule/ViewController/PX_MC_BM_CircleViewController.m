@@ -42,6 +42,8 @@
 
 @property (nonatomic,strong) UIView  *refreshBgV;
 
+@property (nonatomic,strong) UIImageView *navBarHairlineImageView;
+@property (nonatomic,strong) UIView *line;
 
 @end
 
@@ -50,7 +52,6 @@
     [super viewWillAppear:animated];
     [_searchView setHidden:NO];
     [_btnTopic setHidden:NO];
-  
 
 }
 
@@ -58,6 +59,7 @@
     [super viewWillDisappear:animated];
     [_searchView setHidden:YES];
     [_btnTopic setHidden:YES];
+    [_line setHidden:YES];
 }
 
 
@@ -65,16 +67,20 @@
     [super viewDidAppear:animated];
     [self.circleTableView reloadData];
     [self PxHandleData];
-   
-  
 
 }
 - (void)delayMethodHideToastActivity{
      [self.view hideToastActivity];
 }
-- (void)viewDidLoad {
-    [super viewDidLoad];
 
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    _line = [[UIView alloc]initWithFrame:CGRectMake(0, 44.7,SCREEN_WIDTH,0.3f)];
+    _line.backgroundColor = [UIColor lightGrayColor];
+    [self.navigationController.navigationBar addSubview:self.line];
+    
+    [_line setHidden:YES];
     
     _imageUrlArray = @[
                        @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529471573380&di=eac0d551398f1b12549cb47d4c7e60e2&imgtype=0&src=http%3A%2F%2Fimage.tianjimedia.com%2FuploadImages%2F2014%2F064%2F459704ZL3VFN.jpg",
@@ -173,7 +179,7 @@
     if (!_circleTableView) {
         _circleTableView = [PX_TC_CG_UIKitTool tableDelegate:self dataSource:self classCell:[PX_MC_BM_CircleTextCell class] ider:@"PX_MC_BM_CircleTextCell"];
 
-        _circleTableView.backgroundColor = PXWHITECOLOR;
+        _circleTableView.backgroundColor = LineColor;
         //
 //        _circleTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
 //        _circleTableView.delegate = self;
@@ -243,24 +249,30 @@
 #pragma mark - 滑动隐藏导航栏
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+       [_line setHidden:YES];
     if (scrollView.contentOffset.y>0) {
+     
         self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
         float currentAlpha = (scrollView.contentOffset.y + 64) / (float)(52 + 64);
         UIColor *color = PXWHITECOLOR;
         UIImage *image = [self imageWithColor:[color colorWithAlphaComponent:currentAlpha]];
         [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
         [self.navigationController.navigationBar setShadowImage:image];
+        
+        if (scrollView.contentOffset.y > 64) {
+        [_line setHidden:NO];
+        }
     }else{
         self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-
         UIColor *color = PXWHITECOLOR;
         UIImage *image = [self imageWithColor:[color colorWithAlphaComponent:0]];
         [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
         [self.navigationController.navigationBar setShadowImage:image];
+        
     }
         if (self.circleTableView.contentOffset.y <= 0) {
             self.circleTableView.bounces = NO;
-    
+         
             NSLog(@"禁止下拉");
         }
         else
@@ -268,7 +280,7 @@
                 self.circleTableView.bounces = YES;
                 NSLog(@"允许上拉");
     
-            }
+        }
     
 }
 #pragma mark --Lazy

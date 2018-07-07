@@ -35,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"个人信息";
+   
     [self myInfoTableView];
     
      [self PxHandleData];
@@ -173,6 +174,7 @@
     if (!_myInfoTableView) {
         
         _myInfoTableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREENH_HEIGHT) style:UITableViewStylePlain];
+     
         _myInfoTableView.delegate = self;
         _myInfoTableView.dataSource = self;
         _myInfoTableView.rowHeight = 44;
@@ -353,17 +355,12 @@
                 }
                 
                 
-                
             }
-            
-            
             
         }
             
             break;
     }
-    
-    
     
     
     return _cell;

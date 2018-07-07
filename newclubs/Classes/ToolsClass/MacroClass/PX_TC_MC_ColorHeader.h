@@ -20,7 +20,7 @@
 
 #define ZhengWenColor   HexColor(0x595959)
 #define Color9   HexColor(0xB3B3B3)
-#define LineColor HexColor(0xe6e6e6)
+#define LineColor HexColor(0xF3F3F3) //e6e6e6
 
 #define  PXCLEARCOLOR [UIColor clearColor]
 

@@ -145,8 +145,13 @@
     PX_MC_BM_RecommendArrayDetailInfoModel * model = self.dataListArray[indexPath.item];
     PX_MC_BM_RecommendSeSecondViewController *pushSecondVc = [[PX_MC_BM_RecommendSeSecondViewController alloc]init];
     pushSecondVc.id_str = model.id_str;
+    pushSecondVc.strLogo = model.authoravatar;
+    pushSecondVc.strPic = model.value.firstObject;
+    pushSecondVc.strTitle = model.title;
+    pushSecondVc.strCreattime = model.creattime;
+    pushSecondVc.strType = model.type;
+    pushSecondVc.strLastauthorname = model.lastauthorname;
     [self.navigationController pushViewController:pushSecondVc animated:YES];
-    
     
 }
 
