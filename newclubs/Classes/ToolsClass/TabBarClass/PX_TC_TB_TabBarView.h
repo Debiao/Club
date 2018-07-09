@@ -22,6 +22,7 @@ typedef void(^PX_TabBarBlock)(PX_TC_TB_TabBarView *tab,NSUInteger inde);
 
 @property(nonatomic, weak) id<PX_TC_TB_TabBarViewDelegate>delegate;
 @property (nonatomic, copy) PX_TabBarBlock block;
+
 @property (nonatomic, strong) UIButton *firstButton;
 - (void)itemClick:(id)sender;
 @end

@@ -124,6 +124,4 @@
     UIGraphicsEndImageContext();
     return imgae;
 }
-
-
 @end

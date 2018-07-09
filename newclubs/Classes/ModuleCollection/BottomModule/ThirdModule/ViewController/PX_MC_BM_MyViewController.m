@@ -33,7 +33,7 @@
 
 @property (nonatomic,strong) UIButton *btnTopic;
 @property (nonatomic, strong) NSArray *dataListTxetArray;
-
+@property (nonatomic, strong) NSArray *btnImgArray;
 
 @property (nonatomic,strong) UIButton *btnInfo;
 
@@ -44,7 +44,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"";
     [self drawView];
     [self myTableView];
     [self createBtnTopic];
@@ -63,7 +62,7 @@
         _btnTopic = [PX_TC_CG_TopPicDownTextButton buttonWithType:UIButtonTypeCustom];
         [_btnTopic setTitle:self.dataListTxetArray[i] forState:UIControlStateNormal];
         [_btnTopic setTitleColor:PXBLACKCOLOR forState:UIControlStateNormal];
-        [_btnTopic setImage:[UIImage imageNamed:@"my2"] forState:UIControlStateNormal];
+        [_btnTopic setImage:[UIImage imageNamed:self.btnImgArray[i]] forState:UIControlStateNormal];
         _btnTopic.adjustsImageWhenHighlighted = NO;
         _btnTopic.tag = 1000 + i;
         [_btnTopic addTarget:self action:@selector(btnTopicClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -85,6 +84,13 @@
         
     }
     return _dataListTxetArray;
+}
+- (NSArray *)btnImgArray{
+    if (!_btnImgArray) {
+        _btnImgArray = @[@"ic_image_me_topic",@"ic_image_me_reply",@"ic_image_me_like",@"ic_image_me_read"];
+        
+    }
+    return _btnImgArray;
 }
 - (void)btnTopicClick:(UIButton *)sender{
     switch (sender.tag) {

@@ -74,29 +74,28 @@
 }
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
+    
     _line = [[UIView alloc]initWithFrame:CGRectMake(0, 44.7,SCREEN_WIDTH,0.3f)];
     _line.backgroundColor = [UIColor lightGrayColor];
     [self.navigationController.navigationBar addSubview:self.line];
     
     [_line setHidden:YES];
-    
+//    self.navigationController.title = @"";
     _imageUrlArray = @[
                        @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529471573380&di=eac0d551398f1b12549cb47d4c7e60e2&imgtype=0&src=http%3A%2F%2Fimage.tianjimedia.com%2FuploadImages%2F2014%2F064%2F459704ZL3VFN.jpg",
                        @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529471573378&di=186056f35a5e4abddc6728f70b9afdab&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F151006%2F14-151006114S1135.jpg",
                        @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1529471607797&di=c8164d6bc79c0b569ba84ddc169ac110&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Ff9dcd100baa1cd11ecf55a03b312c8fcc3ce2d55.jpg"
                        ];
-    
-    self.title = @"";
+
+
     [self drawView];
     [self bannerScrollView];
-    
+
     self.edgesForExtendedLayout = UIRectEdgeNone;
 
-    
    // NSLog(@"@@@%@",[PX_UserDefaults objectForKey:@"token"]);
-  
+
     [self PxNavInitUI];
     
 }

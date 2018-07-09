@@ -58,7 +58,7 @@
 
     NSMutableArray *array = [NSMutableArray arrayWithArray:@[@"PX_MC_BM_RecommendViewController",@"PX_MC_BM_CircleViewController",@"PX_MC_BM_MyViewController"]];
     
-    NSArray *titleArray = @[@"推荐",@"圈子",@"我的"];
+    NSArray *titleArray = @[@"",@"",@""];
     
     for (NSInteger i = 0; i < array.count; i ++) {
         

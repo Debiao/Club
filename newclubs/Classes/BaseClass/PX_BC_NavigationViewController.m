@@ -38,6 +38,7 @@
         PX_TC_CG_LeftPicRightTextButton *button = [PX_TC_CG_LeftPicRightTextButton buttonWithType:UIButtonTypeCustom];
         UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(-5, 3, 15, 25)];
         [imageView setImage:[UIImage imageNamed:@"return"]];
+        button.frame = CGRectMake(0, 0, 70, 25);
         [button addSubview:imageView];
         [button setTitle:@"返回" forState:UIControlStateNormal];
         [button setTitleColor:PXMAJORCOLOR forState:UIControlStateNormal];

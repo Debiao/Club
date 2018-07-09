@@ -7,7 +7,6 @@
 //
 
 #import "PX_TC_TB_TabBarView.h"
-//#import "UIButton+Wave.h"
 
 @interface PX_TC_TB_TabBarView()
 
@@ -30,17 +29,20 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self == [super initWithFrame:frame]) {
-        //self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor whiteColor];
         // 背景图片
-        //[self addSubview:self.tabbarBackImageView];
+       //[self addSubview:self.tabbarBackImageView];
+        
         for (int i = 0; i < self.dataListArray.count; i++) {
+            
             UIButton *item = [self creatBtnImage:self.dataListArray[i] seletedImage:self.seletedListArray[i] titleText:self.dataListTxetArray[i] action:@selector(itemClick:)];
+            
             item.tag = 100 + i;
+            
             if (i == 0){
                 item.selected = YES;
                 self.lastItemButton = item;
                 self.firstButton = item;
-                
             }
             [self addSubview:item];
         }

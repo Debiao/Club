@@ -34,11 +34,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"个人信息";
-   
+  [self PxHandleData];
+     self.title = @"个人信息";
     [self myInfoTableView];
     
-     [self PxHandleData];
+    
+    
     // Do any additional setup after loading the view.
     
 }
@@ -138,34 +139,52 @@
 
 
 - (void)PxHandleData{
-    [PX_MC_BM_TM_MyInfoHandle performaMyInfnSuccess:^(id obj) {
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        /*
+         type   some code   here
+         */
         
-        PX_MC_BM_MyInfoBaseModel *model = obj;
-        
-        self.strPhoto = model.data.avatar;
-        self.trans_name = model.data.realname;
-        self.trans_qianming = model.data.mood;
-        self.strBackgroundPic = model.data.topicon;
-        
-        if (model.data.sex == 1) {
-            self.strGender = @"男";
-        }else{
-            self.strGender = @"女";
-        }
-        
-        if ([model.data.nickname isEqualToString:@""]) {
-            self.isModify = YES;
-        }else{
-            self.trans_name = model.data.nickname;
-            self.isModify = NO;
-        }
-        
-        self.strBirthday = [model.data.birthday substringToIndex:10];
-        
-        [self.myInfoTableView reloadData];
-    } failure:^(id obj) {
-        
-    }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //获取数据后 在主线程处理
+            if (!whetherHaveNetwork) {
+                [PX_MC_BM_TM_MyInfoHandle performaMyInfnSuccess:^(id obj) {
+                    
+                    PX_MC_BM_MyInfoBaseModel *model = obj;
+                    
+                    self.strPhoto = model.data.avatar;
+                    self.trans_name = model.data.realname;
+                    self.trans_qianming = model.data.mood;
+                    self.strBackgroundPic = model.data.topicon;
+                    
+                    if (model.data.sex == 1) {
+                        self.strGender = @"男";
+                    }else{
+                        self.strGender = @"女";
+                    }
+                    
+                    if ([model.data.nickname isEqualToString:@""]) {
+                        self.isModify = YES;
+                    }else{
+                        self.trans_name = model.data.nickname;
+                        self.isModify = NO;
+                    }
+                    
+                    self.strBirthday = [model.data.birthday substringToIndex:10];
+                    
+                    [self.myInfoTableView reloadData];
+                } failure:^(id obj) {
+                    
+                }];
+                
+            }else{
+                [self.view makeToast:@"没有网络"];
+            }
+ 
+        });
+    });
+    
+    
 }
 
 
